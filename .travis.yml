@@ -2,3 +2,11 @@ language: ruby
 cache: bundler
 rvm:
 - 2.4.1
+services:
+- postgresql
+before_script:
+- bundle exec rails db:create db:migrate RAILS_ENV=test
+script:
+- bundle exec rake
+notifications:
+  email: false
