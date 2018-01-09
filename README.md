@@ -71,6 +71,14 @@ language: ruby
 cache: bundler
 rvm:
 - 2.4.1
+services:
+- postgresql
+before_script:
+- bundle exec rails db:create db:migrate RAILS_ENV=test
+script:
+- bundle exec rake
+notifications:
+  email: false
 ```
 12. Set up Coveralls:
 * follow the instructions on https://docs.travis-ci.com/user/coveralls/
