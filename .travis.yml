@@ -1,0 +1,21 @@
+language: ruby
+cache: bundler
+rvm:
+- 2.4.1
+services:
+- postgresql
+before_script:
+- bundle exec rails db:create db:migrate RAILS_ENV=test
+script:
+- bundle exec rake
+notifications:
+  email: false
+deploy:
+  provider: heroku
+  api_key:
+    secure: op1QhssH2SmXqU74vVS0KJl1+7M2HC2ar+9zV27bLCr4GFRACLrGU+zcFsWwPloVg9pC4zrpt2TjpqxkJ08NBiNkBU2L1TfyGDfx3crttxzPY5cieUO3rf2onWKLwWz9h549QDYViQZQ8JiTmk6aUjmeHG5Q6u7ZCjTIsFIl9D5ublNSkHAp0EHWf5HQHzCMfnjCsGdKNI35K6yE9D8O9WUeCe0rRye7GSU3/6NKqdTlut5ugixQzLVbnPwTl4ZmnSayBvLkVAk6BehbhB3RbSKqr8xFIQsQR5mQQEcskgDsKvkTuk/Qf2py4xS1d1jShDym7aSEaWl+9bu39zPQ4v0z8wjJy/oAcOhbxN7GT1qkdnxt3TOopuwk1VlAa1esQzBodPVY3Eukx3zoL03BNinTNt3kC45fKQJ0LtkD8vIC432BEWwVVDWGw5+dugNFh3XvXTgrbt8ez3zAq7DelNxa6WxUA1G+5aBOib0oRuQyKkZgqY26bdFvf+v36YaLpF6SARlkYAEUIXImU4+HxNyYfLFzEyG5jLhttQiNuhgEzFnNfYwzc6pdb0FR2p32GLr7hM7GhapIxiFWT+bg94AZ8vQcwXfjSZUc6f0DwlZhrjgwPId/vcajGE5aCNMS9n9J3rbRp0QPrWAMKxuHm47Czq2YWtlFAQ8cDH6Qg9M=
+  on: development
+  app:
+    development: jak-sie-masz-slowfood
+  run:
+  - bundle exec rails db:migrate
