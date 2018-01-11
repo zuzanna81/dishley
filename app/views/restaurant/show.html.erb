@@ -1,0 +1,4 @@
+<% @restaurants.each do |restaurant| %>
+  <div id="restaurant-<%= restaurant.id %>">
+    <%= "#{restaurant.name} - #{restaurant.description}" %>
+  <% end %>
