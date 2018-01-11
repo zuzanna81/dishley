@@ -13,6 +13,6 @@ Feature: User can see a list of restaurants on the landing page
 
   Scenario:
     When I visit the landing page
-    Then I should see "Thomas Kebabrulle"
-    And I should see "Oliver's Burger"
-    And I should see "Borat's Palace"
+    Then I would like to see "Thomas Kebabrulle"
+    And I would like to see "Oliver's Burger"
+    And I would like to see "Borat's Palace"
