@@ -5,8 +5,4 @@ class RestaurantController < ApplicationController
 
   def show
   end
-
-  # def create
-  #   @restaurant = Restaurant.create
-  # end
 end
