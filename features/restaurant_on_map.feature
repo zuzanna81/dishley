@@ -12,5 +12,6 @@ Feature: Showing restaurants on map
   @javascript
   Scenario:
     When I visit the landing page
+    And show me the page
     Then I should see the map
     And I should see 3 markers
