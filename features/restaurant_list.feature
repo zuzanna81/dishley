@@ -15,5 +15,3 @@ Feature: User can see a list of restaurants on the landing page
     Then I would like to see "Thomas Kebabrulle"
     And I would like to see "Oliver's Burger"
     And I would like to see "Borat's Palace"
-    When I click on "Show page" by "Thomas Kebabrulle"
-    Then I should be on the "Thomas Kebabrulle" show page
