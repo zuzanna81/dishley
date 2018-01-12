@@ -11,7 +11,7 @@ end
 When("I click on {string} by {string}") do |element, restaurant_name|
   restaurant = Restaurant.find_by(name: restaurant_name)
   within("#restaurant-#{restaurant.id}") do
-  click_link_or_button element
+    click_link_or_button element
   end
 end
 
