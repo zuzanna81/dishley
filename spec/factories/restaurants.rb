@@ -1,5 +1,6 @@
 FactoryBot.define do
   factory :restaurant do
+    restaurant_category "MyString"
     name "MyString"
     description "My String"
     city "Goteborg"

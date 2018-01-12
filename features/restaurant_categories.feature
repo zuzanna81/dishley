@@ -4,18 +4,19 @@ Feature: User can see restaurant sorted by categories
   I would like to see restaurants sorted by categories
 
   Background:
-    Given the following restaurants exist
-      |name             |
-      |Thomas Kebabrulle|
-      |Oliver's Burger  |
-      |Borat's Palace   |
-
-    And the following categories exist
+    Given the following categories exist
       | name            |
       | Chinese         |
       | Thai            |
       | French          |
       | Italian         |
+
+    And the following restaurants exist
+      | name              |
+      | Thomas Kebabrulle |
+      | Oliver's Burger   |
+      | Borat's Palace    |
+
 
   Scenario:
     When I visit the landing page

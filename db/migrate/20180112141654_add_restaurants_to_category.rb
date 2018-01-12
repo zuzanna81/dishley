@@ -1,5 +1,6 @@
 class AddRestaurantsToCategory < ActiveRecord::Migration[5.1]
   def change
-    add_foreign_key :restaurants, :restaurant_category 
+    change_table :restaurants do |t|
+      t.references :restaurant_category, foreign_key: true
   end
 end
