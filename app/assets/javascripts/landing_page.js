@@ -8,11 +8,11 @@ function initiateMap () {
     geoLocate();
 }
 
-function geoLocate () {
+function geoLocate (lat, lng, name) {
   map.addMarker({
-    lat: -12.043333,
-    lng: -77.028333,
-    title: 'Lima',
+    lat: 57.7089,
+    lng: 11.9746,
+    title: "Gothenburg",
     click: function(e) {
       alert('You clicked in this marker');
     }
