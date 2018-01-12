@@ -2,5 +2,8 @@
 <p>What do you feel like tonight?</p>
 
 <% @restaurants.each do |restaurant| %>
-<h2> <%= restaurant.name %> </h2>
+  <div id="restaurant-<%= restaurant.id %>">
+    <%= "#{restaurant.name}" %>
+    <%= link_to 'Show page', restaurant_path(restaurant) %>
+  </div>
 <% end %>

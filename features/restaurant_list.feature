@@ -10,7 +10,6 @@ Feature: User can see a list of restaurants on the landing page
       |Oliver's Burger  |
       |Borat's Palace   |
 
-
   Scenario:
     When I visit the landing page
     Then I would like to see "Thomas Kebabrulle"
