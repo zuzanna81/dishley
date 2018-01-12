@@ -4,6 +4,6 @@
 <% @restaurants.each do |restaurant| %>
   <div id="restaurant-<%= restaurant.id %>">
     <%= "#{restaurant.name}" %>
-      <%= link_to 'Show page', restaurant_path(restaurant) %>
+    <%= link_to 'Show page', restaurant_path(restaurant) %>
   </div>
 <% end %>
