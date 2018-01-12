@@ -31,6 +31,9 @@ ActiveRecord::Schema.define(version: 20180112141654) do
     t.string "street_address"
     t.string "post_code"
     t.string "description"
+    t.bigint "restaurant_category_id"
+    t.index ["restaurant_category_id"], name: "index_restaurants_on_restaurant_category_id"
   end
 
+  add_foreign_key "restaurants", "restaurant_categories"
 end
