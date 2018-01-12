@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 20180111132821) do
     t.string "city"
     t.string "street_address"
     t.string "post_code"
+    t.string "description"
   end
 
 end
