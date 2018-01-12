@@ -1,6 +1,8 @@
 <h1>Jak sie masz</h1>
 <p>What do you feel like tonight?</p>
 
+<div id="category-<%= category.id %>">
+</div>
 <% @restaurants.each do |restaurant| %>
   <div id="restaurant-<%= restaurant.id %>">
     <%= "#{restaurant.name}" %>
