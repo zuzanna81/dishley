@@ -5,7 +5,8 @@ function initiateMap () {
         lat: 57.7089,
         lng: 11.9746
     });
-};
+    geoLocate();
+}
 
 function geoLocate () {
   map.addMarker({
