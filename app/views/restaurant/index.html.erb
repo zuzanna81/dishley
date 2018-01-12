@@ -1,9 +1,11 @@
 <h1>Jak sie masz</h1>
 <p>What do you feel like tonight?</p>
 
-<div id="category-<%= category.id %>">
-  <%= "#{category.name}" %>
-</div>
+<% @restaurant_categories.each do |restaurant_category| %>
+  <div id="restaurant_category-<%= restaurant_category.id %>">
+    <%= "#{restaurant_category.name}" %>
+  </div>
+<% end %>
 
 <% @restaurants.each do |restaurant| %>
   <div id="restaurant-<%= restaurant.id %>">

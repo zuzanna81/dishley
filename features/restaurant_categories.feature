@@ -10,6 +10,13 @@ Feature: User can see restaurant sorted by categories
       |Oliver's Burger  |
       |Borat's Palace   |
 
+    And the following categories exist
+      | name            |
+      | Chinese         |
+      | Thai            |
+      | French          |
+      | Italian         |
+
   Scenario:
     When I visit the landing page
     Then I would like to see "Thomas Kebabrulle" in the "Chinese" category
