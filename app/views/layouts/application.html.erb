@@ -4,19 +4,18 @@
     <title>JakSieMaszSlowfood</title>
 
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'gmaps'%>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" async="async"></script>
     <script src="http://maps.google.com/maps/api/js"></script>
-      <style type="text/css">
-        #map {
-          width: 400px;
-          height: 400px;
-        }
-      </style>
-    </head>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'gmaps'%>
+    <style type="text/css">
+      #map {
+        width: 400px;
+        height: 400px;
+      }
+    </style>
+  </head>
 
   <body>
     <%= yield %>

@@ -5,14 +5,14 @@ function initiateMap () {
         lat: 57.7089,
         lng: 11.9746
     });
-    geoLocate();
+    geoLocate(57.7089,11.9746);
 }
 
-function geoLocate (lat, lng, name) {
+function geoLocate (lat, lng) {
   map.addMarker({
-    lat: 57.7089,
-    lng: 11.9746,
-    title: "Gothenburg",
+    lat: lat,
+    lng: lng,
+    title: "Somewhere",
     click: function(e) {
       alert('You clicked in this marker');
     }
