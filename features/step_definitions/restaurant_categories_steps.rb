@@ -4,6 +4,15 @@ Given("the following categories exist") do |table|
   end
 end
 
+Given("the following restaurants within categories exist") do |table|
+ table.hashes.each do |restaurant|
+   category = RestaurantCategory.find_by(name: restaurant[:category])
+   FactoryBot.create(:restaurant,
+    name: restaurant[:name],
+    restaurant_category: category)
+  end
+end
+
 Then("I would like to see {string} in the {string} category") do |restaurant_name, category_name|
   within "#restaurant_category-#{category_name}" do
     expect(page).to have_content category_name

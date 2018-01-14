@@ -7,23 +7,24 @@ Feature: User can see restaurant sorted by categories
     Given the following categories exist
       | name            |
       | Chinese         |
-      | Thai            |
       | French          |
       | Italian         |
 
-    And the following restaurants exist
-      | name              |
-      | Thomas Kebabrulle |
-      | Oliver's Burger   |
-      | Borat's Palace    |
-
+    And the following restaurants within categories exist
+      | name               | category |
+      | Thomas Kebabrulle  | Chinese  |
+      | Oliver's Burger    | Chinese  |
+      | Borat's Palace     | French   |
+      | Lisa's Bistro      | French   |
+      | Franchesco's Pasta | Italian  |
+      | Mama's Pizza       | Italian  |
 
   Scenario:
     When I visit the landing page
     Then show me the page
     Then I would like to see "Thomas Kebabrulle" in the "Chinese" category
     And I would like to see "Oliver's Burger" in the "Chinese" category
-    And I would like to see "Borat's Palace" in the "Chinese" category
-    # And I would like to see "Thai"
-    # And I would like to see "French"
-    # And I would like to see "Italian"
+    And I would like to see "Borat's Palace" in the "French" category
+    And I would like to see "Lisa's Bistro" in the "French" category
+    And I would like to see "Franchesco's Pasta" in the "Italian" category
+    And I would like to see "Mamma's Pizza" in the "Italian" category

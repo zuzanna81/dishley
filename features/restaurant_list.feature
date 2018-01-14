@@ -5,10 +5,10 @@ Feature: User can see a list of restaurants on the landing page
 
   Background:
     Given the following restaurants exist
-      |name             |
-      |Thomas Kebabrulle|
-      |Oliver's Burger  |
-      |Borat's Palace   |
+      | name              |
+      | Thomas Kebabrulle |
+      | Oliver's Burger   |
+      | Borat's Palace    |
 
   Scenario:
     When I visit the landing page
