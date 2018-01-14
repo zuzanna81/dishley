@@ -18,3 +18,9 @@ Then("I would like to see {string} in the {string} category") do |restaurant_nam
     expect(page).to have_content category_name
   end
 end
+
+Then("I would not like to see {string} in the {string} category") do |restaurant_name, category_name|
+  within "#restaurant_category-#{category_name}" do
+    expect(page).not_to have_content restaurant_name
+  end
+end

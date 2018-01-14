@@ -27,4 +27,10 @@ Feature: User can see restaurant sorted by categories
     And I would like to see "Borat's Palace" in the "French" category
     And I would like to see "Lisa's Bistro" in the "French" category
     And I would like to see "Franchesco's Pasta" in the "Italian" category
-    And I would like to see "Mamma's Pizza" in the "Italian" category
+    And I would like to see "Mama's Pizza" in the "Italian" category
+    Then I would not like to see "Thomas Kebabrulle" in the "French" category
+    And I would not like to see "Oliver's Burger" in the "French" category
+    And I would not like to see "Borat's Palace" in the "Italian" category
+    And I would not like to see "Lisa's Bistro" in the "Italian" category
+    And I would not like to see "Franchesco's Pasta" in the "Chinese" category
+    And I would not like to see "Mama's Pizza" in the "Chinese" category
