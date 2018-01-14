@@ -21,7 +21,6 @@ Feature: User can see restaurant sorted by categories
 
   Scenario:
     When I visit the landing page
-    Then show me the page
     Then I would like to see "Thomas Kebabrulle" in the "Chinese" category
     And I would like to see "Oliver's Burger" in the "Chinese" category
     And I would like to see "Borat's Palace" in the "French" category
