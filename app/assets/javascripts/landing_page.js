@@ -9,7 +9,6 @@ function initiateMap() {
 }
 
 function addMarkers() {
-    //var restaurants = <%= raw @restaurants.to_json %>;
     restaurants.forEach(function (item) {
         map.addMarker({
             lat: item.latitude,

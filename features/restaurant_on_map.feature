@@ -5,13 +5,13 @@ Feature: Showing restaurants on map
 
   Background:
     Given the following restaurants exist
-      |name             |
-      |Thomas Kebabrulle|
-      |Oliver's Burger  |
-      |Borat's Palace   |
+      | name              | street_address    | city     |
+      | Thomas Kebabrulle | Drottninggatan 1  | Göteborg |
+      | Oliver's Burger   | Kungsgatan 1      | Göteborg |
+      | Borat's Palace    | Östra Hmangatan 1 | Göteborg |
+
   @javascript
   Scenario:
     When I visit the landing page
-    And show me the page
     Then I should see the map
     And I should see 3 markers

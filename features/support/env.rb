@@ -1,11 +1,18 @@
 require 'cucumber/rails'
-require 'capybara/poltergeist'
 
-Capybara.register_driver :poltergeist do |app|
-  Capybara::Poltergeist::Driver.new(app, js_error: false)
+Chromedriver.set_version '2.33'
+
+Capybara.register_driver :chrome do |app|
+  capabilities = Selenium::WebDriver::Remote::Capabilities.chrome(
+      chromeOptions: {
+          args: %w[ no-sandbox disable-popup-blocking window-size=1280,980]
+      }
+  )
+
+  Capybara::Selenium::Driver.new(app, browser: :chrome, desired_capabilities: capabilities)
 end
 
-Capybara.javascript_driver = :poltergeist
+Capybara.javascript_driver = :chrome
 
 ActionController::Base.allow_rescue = false
 
