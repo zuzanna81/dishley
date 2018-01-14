@@ -7,3 +7,16 @@ function initiateMap () {
     });
     addMarkers();
 }
+
+addMarkers = function () {
+  //var restaurants = <%= raw @restaurants.to_json %>;
+  restaurants.forEach(function(item) {
+              map.addMarker({
+                  lat: item.latitude,
+                  lng: item.longitude,
+                  title: item.name,
+                  infoWindow: {
+                    content: `<h4>${item.name}</h4><p>${item.city}</p>`}
+                   });
+  });
+}
