@@ -1,5 +1,6 @@
 class AddProductToRestaurants < ActiveRecord::Migration[5.1]
   def change
-    add_column :restaurants, :products, :string
+    change_table :products do |t|
+      t.references :restaurants, foreign_key: true
   end
 end
