@@ -1,3 +1,9 @@
+Given("the following products exists") do |table|
+  table.hashes.each do |product|
+    FactoryBot.create(:product, product)
+  end
+end
+
 Given("the following products exist within a specific restaurant") do |table|
   table.hashes.each do |product|
     FactoryBot.create(:product, product)
