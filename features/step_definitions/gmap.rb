@@ -1,5 +1,5 @@
 Then("I should see the map") do
-  sleep(5) until page.evaluate_script('$.active') == 0
+  sleep(5)
   expect(page).to have_css '#map .gm-style'
 end
 
