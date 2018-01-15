@@ -3,11 +3,12 @@
 
 <% @restaurant_categories.each do |restaurant_category| %>
   <div id="restaurant_category-<%= restaurant_category.name %>">
-    <%= "#{restaurant_category.name}" %>
+    <%= restaurant_category.name %>
+
     <% restaurant_category.restaurants.each do |restaurant| %>
       <div id="restaurant-<%= restaurant.id %>">
-        <%= "#{restaurant.name}" %>
-        <%= link_to 'Show page', restaurant_path(restaurant) %>
+        <%= restaurant.name %>
+        <%= link_to 'Visit', restaurant_path(restaurant) %>
       </div>
     <% end %>
   </div>
