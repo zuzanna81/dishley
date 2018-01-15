@@ -19,8 +19,8 @@ ActiveRecord::Schema.define(version: 20180114201422) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "restaurants_id"
-    t.index ["restaurants_id"], name: "index_products_on_restaurants_id"
+    t.bigint "restaurant_id"
+    t.index ["restaurant_id"], name: "index_products_on_restaurant_id"
   end
 
   create_table "restaurants", force: :cascade do |t|
@@ -35,5 +35,5 @@ ActiveRecord::Schema.define(version: 20180114201422) do
     t.string "description"
   end
 
-  add_foreign_key "products", "restaurants", column: "restaurants_id"
+  add_foreign_key "products", "restaurants"
 end

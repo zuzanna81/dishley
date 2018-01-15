@@ -13,11 +13,11 @@ Feature: User can see product list on the restaurant show page
     Given the following products exist within a specific restaurant
       | name                    | restaurant      |
       | Chicken wings           | Oliver's Burger |
-      | Oliver's Double Burger  | Oliver's Burger |
+      | Double Burger           | Oliver's Burger |
       | Apple pie               | Oliver's Burger |
 
   Scenario:
     When I visit the "Oliver's Burger" show page
     Then I would like to see "Chicken wings"
-    And I would like to see "Oliver's Double Burger"
+    And I would like to see "Double Burger"
     And I would like to see "Apple pie"

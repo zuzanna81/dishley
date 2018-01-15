@@ -2,3 +2,8 @@
   <%= @restaurant.name %>
   <%= @restaurant.description %>
 </p>
+<% @restaurant.products.each do |product| %>
+ <li>
+   <%= product.name %>
+ </li>
+ <% end %>

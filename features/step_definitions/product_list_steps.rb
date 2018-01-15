@@ -8,5 +8,6 @@ Given("the following products exist within a specific restaurant") do |table|
 end
 
 When("I visit the {string} show page") do |restaurant_name|
-  visit "/#{restaurant_name}"
+  restaurant = Restaurant.find_by(name: restaurant_name)
+  visit restaurant_path(restaurant)
 end
