@@ -5,16 +5,16 @@ Feature: User can see product list on the restaurant show page
 
   Background:
     Given the following restaurants exist
-      |name             |
-      |Thomas Kebabrulle|
-      |Oliver's Burger  |
-      |Borat's Palace   |
+      | name              |
+      | Thomas Kebabrulle |
+      | Oliver's Burger   |
+      | Borat's Palace    |
 
     Given the following products exist within a specific restaurant
-      | name                    | restaurant      |
-      | Chicken wings           | Oliver's Burger |
-      | Double Burger           | Oliver's Burger |
-      | Apple pie               | Oliver's Burger |
+      | name              | restaurant      |
+      | Chicken wings     | Oliver's Burger |
+      | Double Burger     | Oliver's Burger |
+      | Apple pie         | Oliver's Burger |
 
   Scenario:
     When I visit the "Oliver's Burger" show page
