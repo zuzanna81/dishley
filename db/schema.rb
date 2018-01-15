@@ -24,12 +24,6 @@ ActiveRecord::Schema.define(version: 20180115140743) do
     t.index ["restaurant_id"], name: "index_products_on_restaurant_id"
   end
 
-  create_table "restaurant_categories", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -40,10 +34,7 @@ ActiveRecord::Schema.define(version: 20180115140743) do
     t.string "street_address"
     t.string "post_code"
     t.string "description"
-    t.bigint "restaurant_category_id"
-    t.index ["restaurant_category_id"], name: "index_restaurants_on_restaurant_category_id"
   end
 
   add_foreign_key "products", "restaurants"
-  add_foreign_key "restaurants", "restaurant_categories"
 end

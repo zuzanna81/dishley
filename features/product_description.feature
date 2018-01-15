@@ -4,6 +4,12 @@ Feature: User can see product description on the restaurant show page
   I would like to see a description
 
   Background:
+    Given the following restaurants exist
+      | name              |
+      | Thomas Kebabrulle |
+      | Oliver's Burger   |
+      | Borat's Palace    |
+
     Given the following products exist within a specific restaurant
       | name              | restaurant      | description      |
       | Chicken wings     | Oliver's Burger | Nice wings       |
