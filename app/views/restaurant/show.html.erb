@@ -1,4 +1,6 @@
-<p>
-  <%= @restaurant.name %>
-  <%= @restaurant.description %>
-</p>
+<h2><%= @restaurant.name %></h2>
+<p><%= @restaurant.description %></p>
+
+<% @restaurant.products.each do |product| %>
+ <li><%= product.name %></li>
+<% end %>
