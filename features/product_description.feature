@@ -11,10 +11,10 @@ Feature: User can see product description on the restaurant show page
       | Borat's Palace    |
 
     Given the following products exist within a specific restaurant
-      | name              | restaurant      | description      | price  |
-      | Chicken wings     | Oliver's Burger | Nice wings       | 50 kr  |
-      | Double Burger     | Oliver's Burger | Tasty fat burger | 150 kr |
-      | Apple pie         | Oliver's Burger | Sweet pie        | 65 kr  |
+      | name              | restaurant      | description      | price  | category    |
+      | Chicken wings     | Oliver's Burger | Nice wings       | 50 kr  | Starter     |
+      | Double Burger     | Oliver's Burger | Tasty fat burger | 150 kr | Main Course |
+      | Apple pie         | Oliver's Burger | Sweet pie        | 65 kr  | Dessert     |
 
     Scenario:
       When I visit the "Oliver's Burger" show page
