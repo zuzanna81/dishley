@@ -26,7 +26,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'coveralls', require: false
-  gem 'selenium-webdriver', '~> 2.48.1'
+  gem 'selenium-webdriver'
   gem 'chromedriver-helper'
 end
 
