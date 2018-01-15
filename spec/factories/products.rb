@@ -3,5 +3,7 @@ FactoryBot.define do
     restaurant
     product_category
     name "MyString"
+    description "MyString"
+    price "MyString"
   end
 end
