@@ -9,7 +9,7 @@ RSpec.describe Restaurant, type: :model do
     it { is_expected.to have_db_column :street_address }
     it { is_expected.to have_db_column :longitude }
     it { is_expected.to have_db_column :latitude }
-    it { should belong_to :restaurant_category }
+    it { is_expected.to belong_to :restaurant_category }
   end
 
   describe 'Validations' do
