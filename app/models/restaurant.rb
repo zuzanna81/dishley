@@ -3,6 +3,7 @@ class Restaurant < ApplicationRecord
   geocoded_by :full_address
   after_validation :geocode
   has_many :products
+  belongs_to :restaurant_category
 
   def full_address
     Geocoder.address([self.street_address,

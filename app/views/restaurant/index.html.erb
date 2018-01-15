@@ -1,9 +1,15 @@
-<h1>Jak sie masz</h1>
+<h1>Dishley House</h1>
 <p>What do you feel like tonight?</p>
 
-<% @restaurants.each do |restaurant| %>
-  <div id="restaurant-<%= restaurant.id %>">
-    <%= "#{restaurant.name}" %>
-    <%= link_to 'Show page', restaurant_path(restaurant) %>
+<% @restaurant_categories.each do |restaurant_category| %>
+  <div id="restaurant_category-<%= restaurant_category.name %>">
+    <%= restaurant_category.name %>
+
+    <% restaurant_category.restaurants.each do |restaurant| %>
+      <div id="restaurant-<%= restaurant.id %>">
+        <%= restaurant.name %>
+        <%= link_to 'Visit', restaurant_path(restaurant) %>
+      </div>
+    <% end %>
   </div>
 <% end %>
