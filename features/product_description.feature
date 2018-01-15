@@ -11,16 +11,13 @@ Feature: User can see product description on the restaurant show page
       | Borat's Palace    |
 
     Given the following products exist within a specific restaurant
-      | name              | restaurant      | description      |
-      | Chicken wings     | Oliver's Burger | Nice wings       |
-      | Double Burger     | Oliver's Burger | Tasty fat burger |
-      | Apple pie         | Oliver's Burger | Sweet pie        |
+      | name              | restaurant      | description      | price  |
+      | Chicken wings     | Oliver's Burger | Nice wings       | 50 kr  |
+      | Double Burger     | Oliver's Burger | Tasty fat burger | 150 kr |
+      | Apple pie         | Oliver's Burger | Sweet pie        | 65 kr  |
 
     Scenario:
       When I visit the "Oliver's Burger" show page
-      Then I would like to see "Chicken wings"
-      And I would like to see "Nice wings"
-      And I would like to see "Double Burger"
-      And I would like to see "Tasty fat burger"
-      And I would like to see "Apple pie"
-      And I would like to see "Sweet pie"
+      Then I would like to see "Nice wings" under "Chicken wings" with a price of "50 kr"
+      And I would like to see "Tasty fat burger" under "Double Burger" with a price of "150 kr"
+      And I would like to see "Sweet pie" under "Apple pie" with a price of "65 kr"

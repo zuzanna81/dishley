@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  validates :name, :description, presence: true
+  validates :name, :description, :price, presence: true
 
 
   belongs_to :restaurant

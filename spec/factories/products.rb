@@ -3,5 +3,6 @@ FactoryBot.define do
     restaurant
     name "MyString"
     description "MyString"
+    price "MyString"
   end
 end

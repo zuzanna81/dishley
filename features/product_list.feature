@@ -14,7 +14,7 @@ Feature: User can see product list on the restaurant show page
     | name              | restaurant      | description      |
     | Chicken wings     | Oliver's Burger | Nice wings       |
     | Double Burger     | Oliver's Burger | Tasty fat burger |
-    | Apple pie         | Oliver's Burger | Sweet pie        |
+    | Apple pie         | Oliver's Burger | Sweet pie        | 
 
   Scenario:
     When I visit the "Oliver's Burger" show page
