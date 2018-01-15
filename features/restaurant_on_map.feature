@@ -10,7 +10,7 @@ Feature: Showing restaurants on map
       | Oliver's Burger   | Kungsgatan 1      | Göteborg |
       | Borat's Palace    | Östra Hmangatan 1 | Göteborg |
 
-  @javascript
+  @javascript @googlemap
   Scenario:
     When I visit the landing page
     Then I should see the map
