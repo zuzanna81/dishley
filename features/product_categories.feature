@@ -5,10 +5,10 @@ Feature: User can see products sorted by categories
 
   Background:
     Given the following restaurants exist
-      | name              |
-      | Thomas Kebabrulle |
-      | Oliver's Burger   |
-      | Borat's Palace    |
+      | name              | street_address    | city     |
+      | Thomas Kebabrulle | Drottninggatan 1  | Göteborg |
+      | Oliver's Burger   | Kungsgatan 1      | Göteborg |
+      | Borat's Palace    | Östra Hmangatan 1 | Göteborg |
 
     Given the following products exist within a specific restaurant and category
       | name              | restaurant      | category    |
@@ -16,7 +16,8 @@ Feature: User can see products sorted by categories
       | Double Burger     | Oliver's Burger | Main Course |
       | Apple pie         | Oliver's Burger | Dessert     |
       | Apple pie         | Borat's Palace  | Starter     |
-
+      
+    @googlemap
     Scenario:
       When I visit the "Oliver's Burger" show page
       Then I would like to see "Chicken wings" under the "Starter" category

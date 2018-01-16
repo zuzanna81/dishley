@@ -5,10 +5,10 @@ Feature: User can see product list on the restaurant show page
 
   Background:
     Given the following restaurants exist
-      | name              |
-      | Thomas Kebabrulle |
-      | Oliver's Burger   |
-      | Borat's Palace    |
+    | name              | street_address    | city     |
+    | Thomas Kebabrulle | Drottninggatan 1  | Göteborg |
+    | Oliver's Burger   | Kungsgatan 1      | Göteborg |
+    | Borat's Palace    | Östra Hmangatan 1 | Göteborg |
 
     Given the following products exist within a specific restaurant
     | name          | restaurant      | description      | category    | price |
@@ -16,6 +16,7 @@ Feature: User can see product list on the restaurant show page
     | Double Burger | Oliver's Burger | Tasty fat burger | Main Course | 50 kr |
     | Apple pie     | Oliver's Burger | Sweet pie        | Dessert     | 50 kr |
 
+  @googlemap
   Scenario:
     When I visit the "Oliver's Burger" show page
     Then I would like to see "Chicken wings"
