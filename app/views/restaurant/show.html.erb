@@ -3,11 +3,9 @@
 
 <% @restaurant.products.each do |product| %>
   <div id="product-<%= product.id %>">
-     <h4><%= product.name %></h4>
-     <p><%= product.description %></p>
-     <p><%= product.price %></p>
-     <div id="<%= product.name %>">
-       <%= image_tag ('/assets/images/' + product.name + '.jpg') %>
-     </div>
+    <h4><%= product.name %></h4>
+    <p><%= product.description %></p>
+    <p><%= product.price %></p>
+    <%= image_tag (product.name.parameterize.underscore + '.jpg') %>
   </div>
 <% end %>
