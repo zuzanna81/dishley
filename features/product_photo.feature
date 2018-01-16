@@ -5,10 +5,10 @@ Feature: User can see a product photo on the restaurant show page
 
   Background:
     Given the following restaurants exist
-      | name              |
-      | Thomas Kebabrulle |
-      | Oliver's Burger   |
-      | Borat's Palace    |
+      | name              | street_address    | city     |
+      | Thomas Kebabrulle | Drottninggatan 1  | Göteborg |
+      | Oliver's Burger   | Kungsgatan 1      | Göteborg |
+      | Borat's Palace    | Östra Hmangatan 1 | Göteborg |
 
     Given the following products exist within a specific restaurant
       | name              | restaurant      | description      | price  |
