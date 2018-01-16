@@ -12,8 +12,7 @@ end
 Then("I would like to see {string} under the {string} category") do |product, product_category|
   product_category = ProductCategory.find_by(name: product_category)
   within("#product_category-#{product_category.id}") do
-    expect(page).to have_content product
-    expect(page).to have_content product_category.name
+    expect(page).to have_content product and product_category.name
   end
 end
 
