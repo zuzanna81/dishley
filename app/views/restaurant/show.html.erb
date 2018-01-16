@@ -1,4 +1,10 @@
-<p>
-  <%= @restaurant.name %>
-  <%= @restaurant.description %>
-</p>
+<h2><%= @restaurant.name %></h2>
+<p><%= @restaurant.description %></p>
+
+<% @restaurant.products.each do |product| %>
+  <div id="product-<%= product.id %>">
+     <h4><%= product.name %></h4>
+     <p><%= product.description %></p>
+     <p><%= product.price %></p>
+  </div>
+<% end %>
