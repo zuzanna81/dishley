@@ -18,6 +18,7 @@ Feature: User can see product description on the restaurant show page
 
     Scenario:
       When I visit the "Oliver's Burger" show page
+      Then show me the page
       Then I would like to see "Nice wings" under "Chicken wings" with a price of "50 kr"
       And I would like to see "Tasty fat burger" under "Double Burger" with a price of "150 kr"
       And I would like to see "Sweet pie" under "Apple pie" with a price of "65 kr"
