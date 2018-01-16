@@ -11,11 +11,12 @@ Feature: User can see a product photo on the restaurant show page
       | Borat's Palace    |
 
     Given the following products exist within a specific restaurant
-      | name              | restaurant      | description      | price  | image |
-      | Chicken wings     | Oliver's Burger | Nice wings       | 50 kr  |       |
-      | Double Burger     | Oliver's Burger | Tasty fat burger | 150 kr |       |
-      | Apple pie         | Oliver's Burger | Sweet pie        | 65 kr  |       |
+      | name              | restaurant      | description      | price  |
+      | Chicken wings     | Oliver's Burger | Nice wings       | 50 kr  |
+      | Double Burger     | Oliver's Burger | Tasty fat burger | 150 kr |
+      | Apple pie         | Oliver's Burger | Sweet pie        | 65 kr  |
 
       Scenario:
         When I visit the "Oliver's Burger" show page
-        Then I would like to see "Nice wings" under "Chicken wings" with a price of "50 kr" and an image of 
+        Then I would like to see "Nice wings" under "Chicken wings" with a price of "50 kr"
+        And I would like to see an image of "Chicken wings"
