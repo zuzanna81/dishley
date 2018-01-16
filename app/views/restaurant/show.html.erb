@@ -6,6 +6,8 @@
      <h4><%= product.name %></h4>
      <p><%= product.description %></p>
      <p><%= product.price %></p>
-     <%= image_tag "Chicken_wings.jpg" %>
+       <div id="<%=product.name %>">
+         <%= image_tag "/assets/images/chicken_wings.jpg" %>
+       </div>
   </div>
 <% end %>

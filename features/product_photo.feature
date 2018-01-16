@@ -19,4 +19,5 @@ Feature: User can see a product photo on the restaurant show page
       Scenario:
         When I visit the "Oliver's Burger" show page
         Then I would like to see "Nice wings" under "Chicken wings" with a price of "50 kr"
-        And I would like to see an image of "Chicken wings"
+        Then show me the page
+        And I would like to see an image of "chicken_wings.jpg"
