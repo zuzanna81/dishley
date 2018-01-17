@@ -14,6 +14,7 @@ Feature: User can view list of nearby restaurants
     #And I am in Stockholm
   And I am at latitude: "59.33", longitude: "18.05"
 
+  @googlemap
   Scenario:
     When I visit the landing page
     And the map has been loaded
