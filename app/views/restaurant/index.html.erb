@@ -1,20 +1,24 @@
-<h1>Dishley House</h1>
-<p>What do you feel like tonight?</p>
-
-<% @restaurant_categories.each do |restaurant_category| %>
-  <div id="restaurant_category-<%= restaurant_category.name %>">
-    <%= restaurant_category.name %>
-
-    <% restaurant_category.restaurants.each do |restaurant| %>
-      <div id="restaurant-<%= restaurant.id %>">
-        <%= restaurant.name %>
-        <%= link_to 'Visit', restaurant_path(restaurant) %>
-      </div>
-    <% end %>
+<div class="row">
+  <div class="col">
+    <h1 class="text-center">Dishley House</h1>
+    <h4 class="text-center">What do you feel like tonight?</h4>
   </div>
-<% end %>
+</div>
 
-<div id="map"></div>
-<script type="text/javascript" charset="utf-8">
-    var restaurants = <%= raw @restaurants.to_json %>;
-</script>
+  <% @restaurant_categories.each do |restaurant_category| %>
+    <div id="restaurant_category-<%= restaurant_category.name %>">
+      <%= restaurant_category.name %>
+
+      <% restaurant_category.restaurants.each do |restaurant| %>
+        <div id="restaurant-<%= restaurant.id %>">
+          <%= restaurant.name %>
+          <%= link_to 'Visit', restaurant_path(restaurant) %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div id="map"></div>
+  <script type="text/javascript" charset="utf-8">
+      var restaurants = <%= raw @restaurants.to_json %>;
+  </script>
