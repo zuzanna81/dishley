@@ -21,7 +21,6 @@ module JakSieMaszSlowfood
       generate.routing_specs false
       generate.controller_specs false
     end
-
     config.load_defaults 5.1
     config.generators.system_tests = nil
   end

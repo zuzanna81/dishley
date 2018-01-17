@@ -1,7 +1,6 @@
 FactoryBot.define do
-  factory :product_category do
+  factory :menu do
     restaurant
-    menu
     name "MyString"
   end
 end
