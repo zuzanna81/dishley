@@ -18,3 +18,9 @@
     width: 400px;
     height: 400px;
 }
+
+#order-icon {
+  position: fixed;
+  right: 0;
+  width: 5%;
+}
