@@ -1,3 +1,4 @@
+@javascript
 Feature: User can view list of nearby restaurants
   As a user,
   In order to see nearest restaurants,
