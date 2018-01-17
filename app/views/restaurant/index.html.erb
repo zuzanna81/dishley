@@ -1,9 +1,9 @@
-<div class="row">
-  <div class="col">
-    <h1 class="text-center">Dishley House</h1>
-    <h4 class="text-center">What do you feel like tonight?</h4>
+<div class="container">
+  <main role="main">
+  <div class="jumbotron">
+    <h1 class="display-3">Dishley House</h1>
+      <p class="lead">What do you feel like tonight?</p>
   </div>
-</div>
 
   <% @restaurant_categories.each do |restaurant_category| %>
     <div id="restaurant_category-<%= restaurant_category.name %>">
@@ -22,3 +22,6 @@
   <script type="text/javascript" charset="utf-8">
       var restaurants = <%= raw @restaurants.to_json %>;
   </script>
+
+  </main>
+</div>
