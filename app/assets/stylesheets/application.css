@@ -19,8 +19,6 @@
     height: 400px;
 }
 
-#order-icon {
-    position: fixed;
-    right: 0;
-    width: 5%;
+.pull-right {
+    float: right !important;
 }
