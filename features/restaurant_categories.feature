@@ -15,12 +15,13 @@ Feature: User can see restaurant sorted by categories
       | Thomas Kebabrulle | Drottninggatan 1  | Göteborg | Chinese  |
       | Oliver's Burger   | Kungsgatan 1      | Göteborg | French   |
       | Borat's Palace    | Östra Hmangatan 1 | Göteborg | Italian  |
+
   @googlemap
-  Scenario:
-    When I visit the landing page
-    Then I would like to see "Thomas Kebabrulle" in the "Chinese" category
-    And I would like to see "Oliver's Burger" in the "French" category
-    And I would like to see "Borat's Palace" in the "Italian" category
-    Then I would not like to see "Thomas Kebabrulle" in the "French" category
-    And I would not like to see "Oliver's Burger" in the "Chinese" category
-    And I would not like to see "Borat's Palace" in the "French" category
+    Scenario:
+      When I visit the landing page
+      Then I would like to see "Thomas Kebabrulle" in the "Chinese" category
+      And I would like to see "Oliver's Burger" in the "French" category
+      And I would like to see "Borat's Palace" in the "Italian" category
+      Then I would not like to see "Thomas Kebabrulle" in the "French" category
+      And I would not like to see "Oliver's Burger" in the "Chinese" category
+      And I would not like to see "Borat's Palace" in the "French" category
