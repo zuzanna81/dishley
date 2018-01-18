@@ -9,7 +9,7 @@
       <h3><%= product_category.name %></h3>
       <% product_category.products.each do |product| %>
         <div id="product-<%= product.id %>">
-          <span><%= product.name %> Price: <%= product.price %></span>
+          <span><%= product.name %> <%= product.description %> Price: <%= product.price %></span>
            <%=button_to 'Add to Order', orders_path(session[:order_id]), params: {product_id: product} %>
         </div>
       <% end %>
