@@ -7,7 +7,7 @@ Feature: User can view list of nearby restaurants
   Background:
     Given the following restaurants exist
       | name              | street_address    | city      |
-      | Zuzanna's Pizza   | Brinellvägen 8    | Stockholm |
+      | Zuzanna's Pizza   | Centralplan 15    | Stockholm |
       | Thomas Kebabrulle | Drottninggatan 1  | Göteborg  |
       | Oliver's Burger   | Kungsgatan 1      | Göteborg  |
 
