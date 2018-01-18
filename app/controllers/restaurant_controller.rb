@@ -17,7 +17,6 @@ class RestaurantController < ApplicationController
       @coordinates = JSON.parse(cookies['geocoderLocation']).to_hash.symbolize_keys
       @geocoded = true
     else
-    binding.pry
       @geocoded = false
     end
   end

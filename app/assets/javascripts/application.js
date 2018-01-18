@@ -3,18 +3,31 @@
 //= require_tree .
 //= require gmaps
 
-document.addEventListener("turbolinks:load", function () {
-  initiateMap();
-  getPosition({ enableHighAccuracy: true }).then(function (position) {
-      setCookie('geocoderLocation', JSON.stringify(position.coords)).then(function () {
-          redirectWithLocation();
-          document.body.dataset.geocoded = true;
-      }).catch(function (error) {
-          return console.log(error);
-      });
-  }).catch(function (error) {
-      return console.log(error);
-  });
+document.addEventListener('turbolinks:load', function () {
+    var element = document.querySelector('body');
+    var observer = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
+            if (mutation.type === "attributes") {
+                console.log("attributes changed");
+                initiateMap();
+            }
+        });
+    });
+
+    observer.observe(element, {
+        attributes: true //configure it to listen to attribute changes
+    });
+
+    getPosition({ enableHighAccuracy: true }).then(function (position) {
+        setCookie('geocoderLocation', JSON.stringify(position.coords)).then(function () {
+            redirectWithLocation();
+            document.body.dataset.geocoded = true;
+        }).catch(function (error) {
+            return console.log(error);
+        });
+    }).catch(function (error) {
+        return console.log(error);
+    });
 });
 
 getPosition = function getPosition(options) {
