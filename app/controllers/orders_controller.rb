@@ -1,7 +1,14 @@
 class OrdersController < ApplicationController
+  before_action :get_product, only: [:create, :update]
+
   def create
-    product = Product.find(params[:product])
     order = Order.create
-    order.add(product, product.price)
+  end
+
+
+  private
+
+  def get_product
+    @product = Product.order(:id)
   end
 end

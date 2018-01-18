@@ -1,4 +1,5 @@
 And("I click on {string} for {string}") do |button, product_name|
+  binding.pry
   product = Product.find_by(name: product_name)
   within "#product-#{product.id}" do
     click_link_or_button button
