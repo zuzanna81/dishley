@@ -9,9 +9,9 @@ Feature: User adds products to an order
       | Oliver's Burger   | Kungsgatan 1      | Göteborg |
 
     Given the following products exist within a specific restaurant and category
-      | name              | restaurant      | category    | menu       |
-      | Chicken wings     | Oliver's Burger | Starter     | Lunch      |
-      | Double Burger     | Oliver's Burger | Main Course | À la carte |
+      | name              | restaurant      | category    | menu       | price |
+      | Chicken wings     | Oliver's Burger | Starter     | Lunch      | 50    |
+      | Double Burger     | Oliver's Burger | Main Course | À la carte | 50    |
 
   @googlemap
   Scenario: Visitor can add a selected product to an order
