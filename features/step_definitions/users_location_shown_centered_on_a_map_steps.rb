@@ -4,6 +4,7 @@ end
 
 Given("the map has been loaded") do
   sleep(0.1)
+  binding.pry
   expect(page).to have_css '#map .gm-style'
 end
 

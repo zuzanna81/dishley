@@ -3,38 +3,26 @@
 //= require_tree .
 //= require gmaps
 
-document.addEventListener('turbolinks:load', function () {
-    var element = document.querySelector('body');
-    var observer = new MutationObserver(function (mutations) {
-        mutations.forEach(function (mutation) {
-            if (mutation.type === "attributes") {
-                console.log("attributes changed");
-                initiateMap();
-            }
-        });
-    });
-
-    observer.observe(element, {
-        attributes: true //configure it to listen to attribute changes
-    });
-
-    getPosition({ enableHighAccuracy: true }).then(function (position) {
-        setCookie('geocoderLocation', JSON.stringify(position.coords)).then(function () {
-            redirectWithLocation();
-            document.body.dataset.geocoded = true;
-        }).catch(function (error) {
-            return console.log(error);
-        });
-    }).catch(function (error) {
-        return console.log(error);
-    });
+document.addEventListener("turbolinks:load", function () {
+  initiateMap();
+  getPosition({ enableHighAccuracy: true }).then(function (position) {
+    var c = {latitude: position.coords.latitude, longitude: position.coords.longitude}
+      setCookie('geocoderLocation', JSON.stringify(c)).then(function () {
+           redirectWithLocation();
+           //document.body.dataset.geocoded = true;
+       }).catch(function (error) {
+           return console.log(error);
+       });
+  }).catch(function (error) {
+      return console.log(error);
+  });
 });
 
 getPosition = function getPosition(options) {
     if (document.body.dataset.env === 'test') {
         return new Promise(function (resolve) {
             var fakePosition = JSON.parse(document.getElementById('fake_position').content);
-            resolve({ coords: { latitude: fakePosition.lat, longitude: fakePosition.lng } });
+            resolve({ coords: { latitude: fakePosition.coords.latitude, longitude: fakePosition.coords.longitude } });
         });
     } else {
         return new Promise(function (resolve, reject) {
@@ -47,19 +35,12 @@ getPosition = function getPosition(options) {
     }
 };
 
-redirectWithLocationParams = function redirectWithLocationparams(position) {
-  var lat = poistion.coords.latitude,
-      lng = position.coords.longitude,
-      url = new URL(window.location.href),
-      params = { lat: lat, lng: lng };
-
-  Object.keys(params).forEach(function (key) {
-    url.searchParams.append(key, params[key]);
-  });
+function redirectWithLocation(position) {
+  var url = new URL(window.location.href);
 
   if (document.body.dataset.geocoded != 'true') {
-      document.body.dataset.geocoded = true;
       window.location.replace(url);
+      document.body.dataset.geocoded = true;
   }
 };
 

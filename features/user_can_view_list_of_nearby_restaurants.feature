@@ -12,7 +12,7 @@ Feature: User can view list of nearby restaurants
       | Oliver's Burger   | Kungsgatan 1      | Göteborg  |
 
     #And I am in Stockholm
-    And I am at latitude: "59.33", longitude: "18.05"
+    And I am at latitude: "59.334591", longitude: "18.063240"
 
   @googlemap
   Scenario:
