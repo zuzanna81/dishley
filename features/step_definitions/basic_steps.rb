@@ -3,9 +3,9 @@ Then("the {string} should be visible") do |selector|
 end
 
 When("I click on {string} link") do |link|
-  click_link_or_button link
+  click_link link
 end
 
-Then("I should be redirected to landing page") do
+Then("I should be redirected to the landing page") do
   expect(current_path).to eq root_path
 end

@@ -5,6 +5,6 @@ Feature: Navbar
 
   Scenario: Display navbar and allow visitor to navigate back home
     Given I visit the landing page
-    Then the "navigation-bar" should be visible
+    Then the "navbar" should be visible
     When I click on "Home" link
-    Then I should be redirected to landing page
+    Then I should be redirected to the landing page
