@@ -3,7 +3,6 @@ class RestaurantController < ApplicationController
 
   def index
     @restaurants = Restaurant.near([@coordinates[:latitude], @coordinates[:longitude]], 100)
-    binding.pry
     @restaurant_categories = RestaurantCategory.all
   end
 
