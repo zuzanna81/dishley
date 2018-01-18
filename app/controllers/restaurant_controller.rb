@@ -3,7 +3,6 @@ class RestaurantController < ApplicationController
 
   def index
     @restaurants = Restaurant.near([@coordinates[:latitude], @coordinates[:longitude]], 50)
-    @restaurants = Restaurant.all
     @restaurant_categories = RestaurantCategory.all
   end
 
@@ -13,13 +12,13 @@ class RestaurantController < ApplicationController
 
   private
   def coordinates
-    if params[:lat].present? && params[:lng].present?
-      @coordinates = {latitude: params[:lat],
-                      longitude: params[:lng]}
+    @coordinates = {}
+    if cookies['geocoderLocation'].present?
+      @coordinates = JSON.parse(cookies['geocoderLocation']).to_hash.symbolize_keys
       @geocoded = true
     else
-      @coordinates = request.location.data.symbolize_keys
-      # @geocoded = true
+    binding.pry
+      @geocoded = false
     end
   end
 end
