@@ -6,8 +6,9 @@ class OrdersController < ApplicationController
     order = Order.create
     product = Product.find(params[:product_id])
     order.add(product, product.price)
-    # if order.persisted?
-    #   session[:order_id] = order.id
+    if order.persisted?
+      session[:order_id] = order.id
+    end
   end
 
 
