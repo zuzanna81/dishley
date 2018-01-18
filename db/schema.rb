@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20180118175100) do
     t.datetime "updated_at", null: false
     t.bigint "restaurant_id"
     t.string "description"
-    t.string "price"
+    t.float "price"
     t.bigint "product_category_id"
     t.index ["product_category_id"], name: "index_products_on_product_category_id"
     t.index ["restaurant_id"], name: "index_products_on_restaurant_id"

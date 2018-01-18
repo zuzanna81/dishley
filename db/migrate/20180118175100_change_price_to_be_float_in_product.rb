@@ -1,5 +1,5 @@
 class ChangePriceToBeFloatInProduct < ActiveRecord::Migration[5.1]
-  #def change
-  #  change_column :products, :price, :integer
-  #end
+  def up
+    change_column :products, :price, 'float USING CAST(price AS float)'
+  end
 end
