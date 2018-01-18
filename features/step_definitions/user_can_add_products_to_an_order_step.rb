@@ -19,8 +19,9 @@ Then("an order should have been created in the database") do
   expect(@order).not_to be nil
 end
 
-Then("{string} should be an order item") do |string|
+Then("{string} should be an order item") do |product_name|
+  #binding.pry
   @order = @order || Order.last
-  items_collection = @order.order_items.map{ |product| product.item.name }
+  items_collection = @order.order_items.map{ |product| @product.item.name }
   expect(items_collection).to include product_name
 end
