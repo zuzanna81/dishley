@@ -11,7 +11,7 @@ Feature: Showing restaurants on map
       | Borat's Palace    | Östra Hmangatan 1 | Göteborg |
 
   @javascript @googlemap
-  Scenario:
-    When I visit the landing page
-    Then I should see the map
-    And I should see 3 markers
+    Scenario:
+      When I visit the landing page
+      Then I should see the map
+      And I should see 3 markers
