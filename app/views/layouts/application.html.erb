@@ -7,12 +7,17 @@
     <% end %>
     <%= csrf_meta_tags %>
     <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GEOCODER_APIKEY']}", 'data-turbolinks-track' => 'reload'%>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
   </head>
 
+  <body data-env="<%= Rails.env %>" data-geocoded="<%= @geocoded %>">
+
   <body data-env="<%= Rails.env %>">
+    <% flash.each do |key, value| %>
+      <div class="alert alert-<%= key %>"><%= value %></div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

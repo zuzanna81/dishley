@@ -1,0 +1,65 @@
+{
+   "results" : [
+      {
+         "address_components" : [
+            {
+               "long_name" : "8",
+               "short_name" : "8",
+               "types" : [ "street_number" ]
+            },
+            {
+               "long_name" : "Brinellvägen",
+               "short_name" : "Brinellvägen",
+               "types" : [ "route" ]
+            },
+            {
+               "long_name" : "Östermalm",
+               "short_name" : "Östermalm",
+               "types" : [ "political", "sublocality", "sublocality_level_1" ]
+            },
+            {
+               "long_name" : "Stockholm",
+               "short_name" : "Stockholm",
+               "types" : [ "postal_town" ]
+            },
+            {
+               "long_name" : "Stockholms län",
+               "short_name" : "Stockholms län",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "Sweden",
+               "short_name" : "SE",
+               "types" : [ "country", "political" ]
+            },
+            {
+               "long_name" : "114 28",
+               "short_name" : "114 28",
+               "types" : [ "postal_code" ]
+            }
+         ],
+         "formatted_address" : "Brinellvägen 8, 114 28 Stockholm, Sweden",
+         "geometry" : {
+            "location" : {
+               "lat" : 59.3498195,
+               "lng" : 18.0705109
+            },
+            "location_type" : "ROOFTOP",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 59.3511684802915,
+                  "lng" : 18.0718598802915
+               },
+               "southwest" : {
+                  "lat" : 59.34847051970849,
+                  "lng" : 18.0691619197085
+               }
+            }
+         },
+         "partial_match" : true,
+         "place_id" : "ChIJgbFhy2qdX0YRu4JbKgOMRP0",
+         "types" : [ "street_address" ]
+      }
+   ],
+   "status" : "OK"
+}

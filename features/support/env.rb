@@ -29,3 +29,9 @@ rescue NameError
 end
 
 Cucumber::Rails::Database.javascript_strategy = :truncation
+
+<<<<<<< HEAD
+World FactoryBot::Syntax::Methods
+=======
+World FactoryBot::Syntax::Methods 
+>>>>>>> 58c21a303f18bea9010610471da3947e6ae9d104
