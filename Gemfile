@@ -19,8 +19,6 @@ gem 'dotenv-rails'
 gem 'rails-assets-gmaps', source: 'https://rails-assets.org'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.0'
-# gem 'sprockets-rails', '~> 3.2', '>= 3.2.1'
-
 
 group :development, :test do
   gem 'pry-byebug'
