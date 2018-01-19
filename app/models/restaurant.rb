@@ -12,4 +12,8 @@ class Restaurant < ApplicationRecord
                       self.post_code,
                       self.city].join(','))
   end
+
+  def category_name
+    self.restaurant_category.name
+  end
 end

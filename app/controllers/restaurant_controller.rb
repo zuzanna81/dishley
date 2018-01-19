@@ -2,8 +2,9 @@ class RestaurantController < ApplicationController
   before_action :coordinates, only: :index
 
   def index
-    @restaurants = Restaurant.near([@coordinates[:latitude], @coordinates[:longitude]], 100)
-    @restaurant_categories = RestaurantCategory.all
+    binding.pry
+    @restaurants = Restaurant.near([@coordinates[:latitude], @coordinates[:longitude]], 100).group_by(&:category_name) if @coordinates
+    # @restaurant_categories = RestaurantCategory.all
   end
 
   def show

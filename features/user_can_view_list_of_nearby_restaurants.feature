@@ -5,13 +5,20 @@ Feature: User can view list of nearby restaurants
   I would like to select restaurants from a list
 
   Background:
-    Given the following restaurants exist
-      | name              | street_address    | city      |
-      | Zuzanna's Pizza   | Centralplan 15    | Stockholm |
-      | Thomas Kebabrulle | Drottninggatan 1  | Göteborg  |
-      | Oliver's Burger   | Kungsgatan 1      | Göteborg  |
+    Given the following categories exist
+      | name            |
+      | Chinese         |
+      | French          |
+      | Italian         |
 
-    #And I am in Stockholm
+    And the following restaurants within categories exist
+        | name              | street_address    | city      | category |
+        | Zuzanna's Pizza   | Centralplan 15    | Stockholm | Italian |
+        | Zuzanna's Pizza 2 | Centralplan 15    | Stockholm | Chinese|
+        | Zuzanna's Pizza 3 | Centralplan 15    | Stockholm | French  |
+        | Thomas Kebabrulle | Drottninggatan 1  | Göteborg  | French  |
+        | Oliver's Burger   | Kungsgatan 1      | Göteborg  | French  |
+
     And I am at latitude: "59.334591", longitude: "18.063240"
 
   @googlemap
@@ -19,6 +26,8 @@ Feature: User can view list of nearby restaurants
     When I visit the landing page
     And the map has been loaded
     Then the center of the map should be approximately "59.334591" lat and "18.063240" lng
-    Then I would like to see "Zuzanna's Pizza"
-    Then show me the page
-    And I would not like to see "Oliver's Burger"
+    # Then I would like to see "Zuzanna's Pizza" in the "Italian" category
+    # Then I would like to see "Zuzanna's Pizza 2" in the "Chinese" category
+    # Then I would like to see "Zuzanna's Pizza 3" in the "French" category
+    # Then show me the page
+    # And I would not like to see "Oliver's Burger"
