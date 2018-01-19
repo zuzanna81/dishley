@@ -29,6 +29,5 @@ Feature: User can view list of nearby restaurants
     Then I would like to see "Zuzanna's Pizza" in the "Italian" category
     And I would like to see "Zuzanna's Pizza 2" in the "Chinese" category
     And I would like to see "Zuzanna's Pizza 3" in the "Chinese" category
-    #Then show me the page
     And I would not like to see "Oliver's Burger" in the "Chinese" category
     And I would not like to see "Thomas Kebabrulle" in the "Chinese" category

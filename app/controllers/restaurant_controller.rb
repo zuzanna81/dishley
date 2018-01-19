@@ -10,6 +10,7 @@ class RestaurantController < ApplicationController
   end
 
   private
+
   def coordinates
     @coordinates = {}
     if cookies['geocoderLocation'].present?
