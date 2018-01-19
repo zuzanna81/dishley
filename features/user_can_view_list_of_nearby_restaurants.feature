@@ -12,12 +12,12 @@ Feature: User can view list of nearby restaurants
       | Italian |
 
     And the following restaurants within categories exist
-      | name              | street_address   | city      | category |
-      | Zuzanna's Pizza   | Centralplan 15   | Stockholm | Italian  |
-      | Zuzanna's Pizza 2 | Centralplan 15   | Stockholm | Chinese  |
-      | Zuzanna's Pizza 3 | Centralplan 15   | Stockholm | Chinese  |
-      | Thomas Kebabrulle | Drottninggatan 1 | Göteborg  | Chinese  |
-      | Oliver's Burger   | Kungsgatan 1     | Göteborg  | Chinese  |
+      | name              | street_address   | city      | category | description   |
+      | Zuzanna's Pizza   | Centralplan 15   | Stockholm | Italian  | Food is tasty |
+      | Zuzanna's Pizza 2 | Centralplan 15   | Stockholm | Chinese  | Food is tasty |
+      | Zuzanna's Pizza 3 | Centralplan 15   | Stockholm | Chinese  | Food is tasty |
+      | Thomas Kebabrulle | Drottninggatan 1 | Göteborg  | Chinese  | Food is tasty |
+      | Oliver's Burger   | Kungsgatan 1     | Göteborg  | Chinese  | Food is tasty |
 
     And I am at latitude: "59.334591", longitude: "18.063240"
 

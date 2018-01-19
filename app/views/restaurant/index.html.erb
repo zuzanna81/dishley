@@ -5,7 +5,10 @@
   <div id="restaurant-category-<%= key.downcase %>">
     <h1><%= key %></h1>
     <% collection.each do |restaurant| %>
+    <div id="restaurant-<%= restaurant.id %>">
       <%= restaurant.name %>
+      <%= link_to 'Visit', restaurant_path(restaurant) %>
+    </div>
     <% end %>
   </div>
 <% end %>
