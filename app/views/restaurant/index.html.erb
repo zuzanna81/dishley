@@ -1,10 +1,14 @@
 <h1>Dishley House</h1>
 <p>What do you feel like tonight?</p>
-<% binding.pry %>
 
-<%#  @restaurants.each do |restaurant| %>
-  <%#= restaurant.name %>
-<%# end %>
+<% @restaurants.group_by(&:category_name).each do |key, collection| %>
+  <div id="restaurant-category-<%= key.downcase %>">
+    <h1><%= key %></h1>
+    <% collection.each do |restaurant| %>
+      <%= restaurant.name %>
+    <% end %>
+  </div>
+<% end %>
 
 <div id="map"></div>
 <script type="text/javascript" charset="utf-8">
