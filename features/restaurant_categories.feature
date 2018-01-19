@@ -1,3 +1,4 @@
+@javascript
 Feature: User can see restaurant sorted by categories
   As a user
   In order to choose type of food
@@ -15,6 +16,9 @@ Feature: User can see restaurant sorted by categories
       | Thomas Kebabrulle | Drottninggatan 1  | Göteborg | Chinese  |
       | Oliver's Burger   | Kungsgatan 1      | Göteborg | French   |
       | Borat's Palace    | Östra Hmangatan 1 | Göteborg | Italian  |
+
+    And I am at latitude: "57.7", longitude: "11.9"
+
   @googlemap
   Scenario:
     When I visit the landing page
