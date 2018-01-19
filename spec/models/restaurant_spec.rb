@@ -37,4 +37,15 @@ RSpec.describe Restaurant, type: :model do
       expect(subject.full_address).to eq 'Båtsmansdalsgatan 7, 424 32 Angered, Sweden'
     end
   end
+
+  describe '#category_name' do
+    let(:restaurant_category) { FactoryBot.create :restaurant_category, name: 'Chinese' }
+    let(:restaurant) { FactoryBot.create :restaurant, name: 'Zuzannas Pizza 2',
+                                         restaurant_category: restaurant_category}
+
+    it 'sets the restaurant_category field' do
+      expect(restaurant.category_name).to eq 'Chinese'
+    end
+  end
+
 end
