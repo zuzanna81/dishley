@@ -17,6 +17,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'geocoder'
 gem 'dotenv-rails'
 gem 'rails-assets-gmaps', source: 'https://rails-assets.org'
+gem 'jquery-rails'
+gem 'bootstrap', '~> 4.0'
+# gem 'sprockets-rails', '~> 3.2', '>= 3.2.1'
+
 
 group :development, :test do
   gem 'pry-byebug'
@@ -38,5 +42,3 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
-
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
