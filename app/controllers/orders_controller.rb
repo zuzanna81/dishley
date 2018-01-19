@@ -18,7 +18,6 @@ class OrdersController < ApplicationController
     end
   end
 
-
   private
 
   def get_product
