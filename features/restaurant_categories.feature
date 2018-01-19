@@ -15,6 +15,7 @@ Feature: User can see restaurant sorted by categories
       | Thomas Kebabrulle | Drottninggatan 1  | Göteborg | Chinese  |
       | Oliver's Burger   | Kungsgatan 1      | Göteborg | French   |
       | Borat's Palace    | Östra Hmangatan 1 | Göteborg | Italian  |
+
   @googlemap
   Scenario:
     When I visit the landing page
