@@ -22,7 +22,7 @@ Feature: User adds products to an order
     And an order should have been created in the database
     And "Chicken wings" should be an order item
 
-  @googlemap  
+  @googlemap
   Scenario: Visitor can add a second product to an already excisting order
     Given I visit the "Oliver's Burger" show page
     And "Chicken wings" is already in my order

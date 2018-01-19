@@ -10,7 +10,12 @@
       <% product_category.products.each do |product| %>
         <div id="product-<%= product.id %>">
           <span><%= product.name %> <%= product.description %> Price: <%= product.price %></span>
-           <%=button_to 'Add to Order', orders_path(session[:order_id]), params: {product_id: product} %>
+          <% if session[:order_id] %>
+          <% binding.pry %>
+            <%=button_to 'Add to Order', order_path(session[:order_id]), method: :put, params: {product: product} %>
+          <% else %>
+            <%=button_to 'Add to Order', orders_path, params: {product: product} %>
+          <% end %>
         </div>
       <% end %>
     </div>
