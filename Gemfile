@@ -19,6 +19,8 @@ gem 'dotenv-rails'
 gem 'rails-assets-gmaps', source: 'https://rails-assets.org'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.0'
+gem 'acts_as_shopping_cart'
+
 
 group :development, :test do
   gem 'pry-byebug'

@@ -7,5 +7,5 @@ When("I click on {string} link") do |link|
 end
 
 Then("I should be redirected to the landing page") do
-  expect(current_path).to eq '/restaurant/index'
+  expect(current_path).to eq root_path
 end
