@@ -8,12 +8,12 @@ class Restaurant < ApplicationRecord
   belongs_to :restaurant_category
 
   def full_address
-    Geocoder.address([self.street_address,
-                      self.post_code,
-                      self.city].join(','))
+    Geocoder.address([street_address,
+                      post_code,
+                      city].join(','))
   end
 
   def category_name
-    self.restaurant_category.name
+    restaurant_category.name
   end
 end
