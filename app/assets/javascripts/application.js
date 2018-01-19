@@ -11,10 +11,9 @@ document.addEventListener("turbolinks:load", function() {
     var c = {
       latitude: position.coords.latitude,
       longitude: position.coords.longitude
-    }
+    };
     setCookie('geocoderLocation', JSON.stringify(c)).then(function() {
       redirectWithLocation();
-      //document.body.dataset.geocoded = true;
     }).catch(function(error) {
       return console.log(error);
     });
@@ -52,7 +51,7 @@ function redirectWithLocation(position) {
     window.location.replace(url);
     document.body.dataset.geocoded = true;
   }
-};
+}
 
 setCookie = function setCookie(name, value) {
   var days = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 7;
