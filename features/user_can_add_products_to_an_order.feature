@@ -13,7 +13,7 @@ Feature: User adds products to an order
       | Chicken wings     | Oliver's Burger | Starter     | Lunch      | 45    |
       | Double Burger     | Oliver's Burger | Main Course | À la carte | 50    |
 
-  @googlemap
+  @javascript @googlemap
   Scenario: Visitor can add a selected product to an order
     Given I visit the "Oliver's Burger" show page
     And I click on "Add to Order" for "Chicken wings"
@@ -22,7 +22,7 @@ Feature: User adds products to an order
     And an order should have been created in the database
     And "Chicken wings" should be an order item
 
-  @googlemap
+  @javascript @googlemap
   Scenario: Visitor can add a second product to an already excisting order
     Given I visit the "Oliver's Burger" show page
     And "Chicken wings" is already in my order

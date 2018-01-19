@@ -18,13 +18,14 @@ Then("an order should have been created in the database") do
   @order = Order.last
   expect(@order).not_to be nil
 end
+#
 
-Given("{string} is already in my order") do |product_name|
+And(/^"([^"]*)" is already in my order$/) do |product_name|
   steps %Q{
-    "And I click on "Add to Order" for #{product_name}"
-    "Then I should see "#{product_name} has been added to your order""
-    "And I should be on the restaurant "Oliver's Burger Place" page"
-  }
+   And I click on "Add to Order" for "#{product_name}"
+   Then I should see "#{product_name} has been added to your order"
+   And I should be on the restaurant "Oliver's Burger" page
+        }
 end
 
 Then("{string} should be an order item") do |product_name|
