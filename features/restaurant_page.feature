@@ -10,7 +10,7 @@ Feature: User can see restaurant's details on the restaurant show page
       | Oliver's Burger   | Kungsgatan 1      | Göteborg | The best hamburger you can get  |
       | Borat's Palace    | Östra Hmangatan 1 | Göteborg | The best borat you can get      |
 
-  @googlemap
+    @googlemap
     Scenario:
       When I visit the landing page
       And I click on "Visit" by "Thomas Kebabrulle"
