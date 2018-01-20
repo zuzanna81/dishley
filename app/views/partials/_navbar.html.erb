@@ -5,7 +5,9 @@
         <%= link_to 'Home', root_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Order</a>
+        <% if session[:order_id] %>
+          <%= link_to 'Order', order_path(session[:order_id]), class: 'nav-link' %>
+        <% end %>
       </li>
     </ul>
   </div>
