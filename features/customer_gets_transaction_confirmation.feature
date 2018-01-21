@@ -1,3 +1,4 @@
+@javascript @googlemap
 Feature: Payment confirmation
   As a user
   In order to ascertain that payment was successful

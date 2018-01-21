@@ -12,8 +12,8 @@ end
 
 def page_path_from(page_name)
   case page_name.downcase
-  when 'order'
-      order_path(Order.last)
+  when 'order' then order_path(Order.last)
+  when 'confirmation' then charge_path
     else
       root_path
   end

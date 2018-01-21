@@ -7,7 +7,7 @@ class ChargesController < ApplicationController
 
   def create
     @order = Order.find(params[:order_id])
-    @amount = 1000
+    @amount = @order.total
     customer = Stripe::Customer.create(
       email: params[:stripeEmail],
       source: stripe_token(params)
@@ -19,6 +19,10 @@ class ChargesController < ApplicationController
       description: 'Payment for Order'
       currency: 'usd'
     )
+
+    if charge.paid?
+      redirect_to charge_path, notice:message
+    end
   end
 
   private
