@@ -27,12 +27,15 @@
   </table>
 </div>
 </div>
-
-<%= form_tag charges_path do %>
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= ENV['PUBLISHABLE_KEY'] %>"
-          data-description="Payment for Order"
-          data-amount="<%= @order.total %>"
-          data-locale="<%= Rails.env.test? ? 'en' : 'auto' %>"></script>
-  <button type="submit" class="btn btn-success">Pay with Card</button>
+<% if @order.pending? %>
+  <%= form_tag charges_path do %>
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+            data-key="<%= ENV['PUBLISHABLE_KEY'] %>"
+            data-description="Payment for Order"
+            data-amount="<%= @order.total %>"
+            data-locale="<%= Rails.env.test? ? 'en' : 'auto' %>"></script>
+    <button type="submit" class="btn btn-success">Pay with Card</button>
+  <% end %>
+<% else %>
+  <h2> Something </h2>
 <% end %>

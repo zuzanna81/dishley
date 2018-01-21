@@ -217,6 +217,10 @@ GEM
     rb-fsevent (0.10.2)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
+    rspec (3.7.0)
+      rspec-core (~> 3.7.0)
+      rspec-expectations (~> 3.7.0)
+      rspec-mocks (~> 3.7.0)
     rspec-core (3.7.1)
       rspec-support (~> 3.7.0)
     rspec-expectations (3.7.0)
@@ -270,7 +274,12 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    state_machine (1.2.0)
     state_machines (0.5.0)
+    state_machines-rspec (0.5.0)
+      activesupport
+      rspec (~> 3.3)
+      state_machines
     stripe (3.9.1)
       faraday (~> 0.10)
     stripe-ruby-mock (2.5.0)
@@ -334,7 +343,8 @@ DEPENDENCIES
   shoulda-matchers
   spring
   spring-watcher-listen (~> 2.0.0)
-  state_machines
+  state_machine
+  state_machines-rspec
   stripe
   stripe-ruby-mock (~> 2.5)
   turbolinks (~> 5)

@@ -21,7 +21,7 @@ gem 'jquery-rails'
 gem 'bootstrap', '~> 4.0'
 gem 'acts_as_shopping_cart'
 gem 'stripe'
-gem 'state_machines'
+gem 'state_machine'
 
 group :development, :test do
   gem 'pry-byebug'
@@ -36,6 +36,7 @@ group :development, :test do
   gem 'chromedriver-helper'
   gem 'webmock'
   gem 'stripe-ruby-mock', '~> 2.5', require: 'stripe_mock'
+  gem 'state_machines-rspec'
 end
 
 group :development do

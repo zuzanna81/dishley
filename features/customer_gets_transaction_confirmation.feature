@@ -23,6 +23,7 @@ Background:
 
 Scenario: User can access confirmation page after successfully performing a transaction
   Given I click on "Order" link
+  Then the order should be "Pending"
   And I click on "Pay with Card" button
   And I fill in stripe form field "Email" with "random@random.com"
   And I fill in stripe form field "Card number" with "4242 4242 4242 4242"
@@ -30,4 +31,5 @@ Scenario: User can access confirmation page after successfully performing a tran
   And I fill in stripe form field "CVC" with "123"
   And I submit the stripe form
   Then I should be redirected to "confirmation" page
+  And the order should be "Confirmed"
   And I should see "Thanks, you paid" and the total amount should be "95.00 kr"
