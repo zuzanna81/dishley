@@ -21,7 +21,7 @@ gem 'jquery-rails'
 gem 'bootstrap', '~> 4.0'
 gem 'acts_as_shopping_cart'
 gem 'stripe'
-
+gem 'state_machines'
 
 group :development, :test do
   gem 'pry-byebug'
