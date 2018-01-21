@@ -13,9 +13,11 @@ Feature: User can see a product photo on the restaurant show page
     Given the following products exist within a specific restaurant
     | name          | restaurant      | description      | category    | price | image_file_link                    |
     | Chicken wings | Oliver's Burger | Nice wings       | Starter     | 50 kr | http://www.example.com/image.jpg   |
+    | Double Burger | Oliver's Burger | Tastiest burger  | Main        | 50 kr | http://www.example.com/image       |
 
   @googlemap
   Scenario:
     When I visit the "Oliver's Burger" show page
     Then I would like to see "Nice wings" under "Chicken wings" with a price of "50.0 kr"
     And I would like to see an image for "Chicken wings"
+    And I would not like to see an image for "Double Burger"
