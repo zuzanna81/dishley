@@ -8,6 +8,7 @@ RSpec.describe Product, type: :model do
     it { is_expected.to belong_to :product_category }
     it { is_expected.to have_db_column :description }
     it { is_expected.to have_db_column :price }
+    it { is_expected.to have_db_column :image_file_link }
   end
 
   describe 'Validations' do
