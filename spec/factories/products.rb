@@ -5,6 +5,6 @@ FactoryBot.define do
     name "MyString"
     description "Product description"
     price 80
-    image_file_link "String"
+    image_file_link ""
   end
 end
