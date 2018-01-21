@@ -17,8 +17,11 @@
               Price:
               <%= product.price %>
               kr</span>
-              <%= image_tag (product.image_file_link) %>
-
+              <% if product.image_file_link.empty? %>
+                <%=  %>
+              <% else product.image_file_link %>
+                <%= image_tag (product.image_file_link) %> 
+              <% end %>
             <% if session[:order_id] %>
               <%=button_to 'Add to Order', order_path(session[:order_id]), method: :put, params: {product: product} %>
             <% else %>
