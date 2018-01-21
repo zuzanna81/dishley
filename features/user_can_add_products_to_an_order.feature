@@ -8,10 +8,9 @@ Feature: User adds products to an order
       | name              | street_address    | city     |
       | Oliver's Burger   | Kungsgatan 1      | Göteborg |
 
-    Given the following products exist within a specific restaurant and category
-      | name              | restaurant      | category    | menu       | price |
-      | Chicken wings     | Oliver's Burger | Starter     | Lunch      | 45    |
-      | Double Burger     | Oliver's Burger | Main Course | À la carte | 50    |
+    Given the following products exist within a specific restaurant
+    | name          | restaurant      | description      | category    | price | image_file_link                    |
+    | Chicken wings | Oliver's Burger | Nice wings       | Starter     | 50 kr | http://www.example.com/image.jpg   |
 
   @javascript @googlemap
   Scenario: Visitor can add a selected product to an order
