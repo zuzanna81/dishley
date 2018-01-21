@@ -15,10 +15,11 @@ class ChargesController < ApplicationController
       description: 'Payment for Order'
       currency: 'usd'
     )
-
+binding.pry
     if charge.paid?
+      binding.pry
       @order.payment_cleared
-      redirect_to charge_path, notice:message
+      redirect_to order_path(@order), notice:message
     else
       @order.payment_declined
       redirect_to order_path(@order), notice:"Something went wrong :("
