@@ -17,9 +17,7 @@
               Price:
               <%= product.price %>
               kr</span>
-              <% if product.image_file_link.empty? %>
-                <% %>
-              <% else product.image_file_link %>
+              <% if product.image_file_link.empty? == false %>
                 <%= image_tag (product.image_file_link) %>
               <% end %>
             <% if session[:order_id] %>
