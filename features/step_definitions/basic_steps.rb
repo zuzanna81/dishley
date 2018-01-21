@@ -9,3 +9,7 @@ end
 Then("I should be redirected to the landing page") do
   expect(current_path).to eq root_path
 end
+
+Given("pause") do
+  binding.pry
+end

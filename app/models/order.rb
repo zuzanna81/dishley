@@ -4,4 +4,8 @@ class Order < ApplicationRecord
   def order_items
     shopping_cart_items
   end
+
+  def tax_pct
+    0.0
+  end
 end

@@ -18,7 +18,6 @@ Then("an order should have been created in the database") do
   @order = Order.last
   expect(@order).not_to be nil
 end
-#
 
 And(/^"([^"]*)" is already in my order$/) do |product_name|
   steps %Q{
