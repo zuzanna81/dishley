@@ -1,7 +1,6 @@
 .container
   .row
-    .col
-    .col-8
+    .col-8.offset-2
       %h1.extra-margin= @restaurant.name
       %p.address
         = @restaurant.full_address
@@ -19,10 +18,9 @@
                     %p= product.description
                   .card-text
                     %p Price: #{product.price} kr
-                    - if product.image_file_link
-                      = image_tag (product.image_file_link)
+                    - unless product.image_file_link.blank?
+                      = image_tag(product.image_file_link)
                   - if session[:order_id]
                     = button_to 'Add to Order', order_path(session[:order_id]), method: :put, params: {product: product}, class: 'btn btn-light'
                   - else
                     = button_to 'Add to Order', orders_path, params: {product: product}, class: 'btn btn-light'
-    .col
