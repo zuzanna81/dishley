@@ -34,7 +34,7 @@
             data-description="Payment for Order"
             data-amount="<%= @order.total %>"
             data-locale="<%= Rails.env.test? ? 'en' : 'auto' %>"></script>
-    <button type="submit" class="btn btn-success">Pay with Card</button>
+    
   <% end %>
 <% else %>
   <h2> Thanks, you paid <strong> <%= @order.total %> kr </strong>!</h2>

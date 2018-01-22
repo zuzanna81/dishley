@@ -2,6 +2,7 @@ class ChargesController < ApplicationController
   before_action :check_env
 
   def create
+    binding.pry
     @order = Order.find(params[:order_id])
     @amount = @order.total
     customer = Stripe::Customer.create(
