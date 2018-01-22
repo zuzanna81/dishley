@@ -15,7 +15,7 @@ class ChargesController < ApplicationController
       description: 'Payment for Order'
       currency: 'usd'
     )
-binding.pry
+
     if charge.paid?
       binding.pry
       @order.payment_cleared
