@@ -20,7 +20,7 @@ gem 'rails-assets-gmaps', source: 'https://rails-assets.org'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.0'
 gem 'acts_as_shopping_cart'
-gem 'stripe'
+gem 'stripe-rails'
 gem 'state_machine'
 
 group :development, :test do
