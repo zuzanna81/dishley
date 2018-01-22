@@ -11,9 +11,9 @@ Feature: User can login and logout
     And I click on "Log in" link
 
   Scenario: Visitor fills in all fields [Happy Path]
-    When I fill in "Email" with "me@hotmail.com"
-    And I fill in "Password" with "cutie123"
+    When I fill in "Email" with "me@mail.com"
+    And I fill in "Password" with "whatever"
     And I click on "Log in" button
-    Then I should be redirected to the "Landing" page
+    Then I should be redirected to "landing" page
     And I should see "Logged in as: me@mail.com"
     And I should see "Signed in successfully."
