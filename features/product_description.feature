@@ -12,7 +12,7 @@ Feature: User can see product description on the restaurant show page
 
     Given the following products exist within a specific restaurant
       | name          | restaurant      | description      | price | category    | menu  |
-      | Chicken wings | Oliver's Burger | Nice wings       | 50    | Starter     | Lunch | 
+      | Chicken wings | Oliver's Burger | Nice wings       | 50    | Starter     | Lunch |
       | Double Burger | Oliver's Burger | Tasty fat burger | 150   | Main Course | Lunch |
       | Apple pie     | Oliver's Burger | Sweet pie        | 65    | Dessert     | Lunch |
 
