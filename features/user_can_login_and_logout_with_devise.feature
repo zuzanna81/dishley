@@ -31,3 +31,9 @@ Feature: User can login and logout
   Scenario: User does not fill in email or password [Sad Path]
     When I click on "Log in" button
     Then I should see "Invalid Email or password."
+
+  Scenario: User logs out
+    Given I am logged in as "me@mail.com"
+    And I visit the landing page
+    When I click on "Logout" link
+    Then I should see "Signed out successfully."
