@@ -1,5 +1,5 @@
 Then("the order should be {string}") do |state|
-  binding.pry
+  sleep 2
   order = Order.last
   expect(order.state).to eq state
 end

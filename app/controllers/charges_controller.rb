@@ -2,7 +2,6 @@ class ChargesController < ApplicationController
   before_action :check_env
 
   def create
-    binding.pry
     @order = Order.find(params[:order_id])
     customer = Stripe::Customer.create(
       email: params[:stripeEmail],
@@ -17,12 +16,11 @@ class ChargesController < ApplicationController
     )
 
     if charge.paid?
-      binding.pry
       @order.payment_cleared
-      redirect_to order_path(@order), notice:message
+      redirect_to order_path(@order), notice: message
     else
       @order.payment_declined
-      redirect_to order_path(@order), notice: 'Something went wrong :(''
+      redirect_to order_path(@order), notice: 'Something went wrong :('
     end
   end
 
