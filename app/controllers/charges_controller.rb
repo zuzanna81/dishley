@@ -4,7 +4,6 @@ class ChargesController < ApplicationController
   def create
     binding.pry
     @order = Order.find(params[:order_id])
-    @amount = @order.total
     customer = Stripe::Customer.create(
       email: params[:stripeEmail],
       source: stripe_token(params)
@@ -12,8 +11,8 @@ class ChargesController < ApplicationController
 
     charge = Stripe::Charge.create(
       customer: customer.id,
-      amount: @amount,
-      description: 'Payment for Order'
+      amount: @order.total * 100,
+      description: 'Payment for Order',
       currency: 'usd'
     )
 
@@ -23,7 +22,7 @@ class ChargesController < ApplicationController
       redirect_to order_path(@order), notice:message
     else
       @order.payment_declined
-      redirect_to order_path(@order), notice:"Something went wrong :("
+      redirect_to order_path(@order), notice: 'Something went wrong :(''
     end
   end
 
@@ -38,6 +37,6 @@ class ChargesController < ApplicationController
   end
 
   def check_env
-      StripeMock.start if Rails.env.test?
+    StripeMock.start if Rails.env.test?
   end
 end
