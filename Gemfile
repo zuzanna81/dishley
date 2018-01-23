@@ -22,6 +22,8 @@ gem 'bootstrap', '~> 4.0'
 gem 'acts_as_shopping_cart'
 gem 'stripe-rails'
 gem 'state_machine'
+gem 'haml'
+gem 'devise'
 
 group :development, :test do
   gem 'pry-byebug'

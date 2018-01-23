@@ -8,7 +8,8 @@ Given("the following products exist within a specific restaurant") do |table|
                       description: product[:description],
                       restaurant: held_by_restaurant,
                       product_category: category,
-                      price: product[:price].to_f)
+                      price: product[:price].to_f,
+                      image_file_link: product[:image_file_link])
   end
 end
 
