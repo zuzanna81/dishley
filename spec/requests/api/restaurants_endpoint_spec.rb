@@ -2,7 +2,6 @@ require 'rails_helper'
 
 
 RSpec.describe Api::RestaurantsController, type: :request do
-
   describe '#index' do
     context 'with anonymous doubles' do
       let!(:restaurants) do
@@ -20,15 +19,21 @@ RSpec.describe Api::RestaurantsController, type: :request do
       let!(:thai_food) {create(:restaurant,
                                name: 'Thai Palace',
                                description: 'Lovely place.',
-                               street_address: 'Holtermasgatan 1C',
-                               post_code: '410 29',
                                city: 'Gothenburg',
+                               street_address: 'Holtermansgatan 1C',
+                               post_code: '410 29',
                                restaurant_category: category)}
 
       it 'includes specific restaurant' do
         get '/api/restaurants'
-        json_resp = JSON.parse(response.body)
-        expect(json_resp['data'].first['attributes']['name']).to eq 'Thai Palace'
+        json_resp = JSON.parse(response.body)['data'].first['attributes']
+        expect(json_resp['name']).to eq 'Thai Palace'
+        expect(json_resp['description']).to eq 'Lovely place.'
+        expect(json_resp['city']).to eq 'Gothenburg'
+        expect(json_resp['post-code']).to eq '410 29'
+        expect(json_resp['restaurant-category']['name']).to eq 'Thai'
+        expect(json_resp['street-address']).to eq 'Holtermansgatan 1C'
+        expect(response.status).to eq 200
       end
 
     end
