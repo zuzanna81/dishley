@@ -17,7 +17,7 @@ class ChargesController < ApplicationController
 
     if charge.paid?
       @order.payment_cleared
-      redirect_to order_path(@order), notice: message
+      redirect_to order_path(@order), notice: 'Thank you for your order'
     else
       @order.payment_declined
       redirect_to order_path(@order), notice: 'Something went wrong :('
