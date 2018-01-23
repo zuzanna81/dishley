@@ -6,20 +6,20 @@ Feature: Customer can pay for order
 
   Background:
     Given the following restaurants exist
-    | name              | street_address    | city     |
-    | Oliver's Burger   | Kungsgatan 1      | Göteborg |
+      | name              | street_address    | city     |
+      | Oliver's Burger   | Kungsgatan 1      | Göteborg |
 
     Given the following products exist within a specific restaurant
-    | name          | restaurant      | description      | category    | price |
-    | Chicken wings | Oliver's Burger | Nice wings       | Starter     | 45    |
-    | Double Burger | Oliver's Burger | Tasty fat burger | Main Course | 50    |
+      | name          | restaurant      | description      | category    | price |
+      | Chicken wings | Oliver's Burger | Nice wings       | Starter     | 45    |
+      | Double Burger | Oliver's Burger | Tasty fat burger | Main Course | 50    |
 
     Given I visit the "Oliver's Burger" show page
 
     Given the following order items exist in the order:
-    | name          |
-    | Chicken wings |
-    | Double Burger |
+      | name          |
+      | Chicken wings |
+      | Double Burger |
 
 
   Scenario: User can perform transaction

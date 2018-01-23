@@ -9,9 +9,9 @@ Feature: User adds products to an order
       | Oliver's Burger   | Kungsgatan 1      | Göteborg |
 
     Given the following products exist within a specific restaurant
-    | name          | restaurant      | description      | category    | price | image_file_link                    |
-    | Chicken wings | Oliver's Burger | Nice wings       | Starter     | 50 kr | http://www.example.com/image.jpg   |
-    | Double Burger | Oliver's Burger | Tasty fat burger | Main Course | 50    | http://www.example.com/image.jpg   |
+      | name          | restaurant      | description      | category    | price | image_file_link                    |
+      | Chicken wings | Oliver's Burger | Nice wings       | Starter     | 50 kr | http://www.example.com/image.jpg   |
+      | Double Burger | Oliver's Burger | Tasty fat burger | Main Course | 50    | http://www.example.com/image.jpg   |
 
   @javascript @googlemap
   Scenario: Visitor can add a selected product to an order

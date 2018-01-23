@@ -6,10 +6,10 @@ Feature: User can see a list of restaurants on the landing page
 
   Background:
     Given the following restaurants exist
-    | name              | street_address    | city     |
-    | Thomas Kebabrulle | Drottninggatan 1  | Göteborg |
-    | Oliver's Burger   | Kungsgatan 1      | Göteborg |
-    | Borat's Palace    | Östra Hmangatan 1 | Göteborg |
+      | name              | street_address    | city     |
+      | Thomas Kebabrulle | Drottninggatan 1  | Göteborg |
+      | Oliver's Burger   | Kungsgatan 1      | Göteborg |
+      | Borat's Palace    | Östra Hmangatan 1 | Göteborg |
 
     And I am at latitude: "57.7", longitude: "11.9"
 
