@@ -11,9 +11,9 @@ Feature: User can see a product photo on the restaurant show page
       | Borat's Palace    | Östra Hmangatan 1 | Göteborg |
 
     Given the following products exist within a specific restaurant
-    | name          | restaurant      | description      | category    | price | image_file_link                    |
-    | Chicken wings | Oliver's Burger | Nice wings       | Starter     | 50 kr | http://www.example.com/image.jpg   |
-    | Double Burger | Oliver's Burger | Tastiest burger  | Main        | 50 kr |                                    |
+      | name          | restaurant      | description      | category    | price | image_file_link                    |
+      | Chicken wings | Oliver's Burger | Nice wings       | Starter     | 50 kr | http://www.example.com/image.jpg   |
+      | Double Burger | Oliver's Burger | Tastiest burger  | Main        | 50 kr |                                    |
 
   @googlemap
   Scenario: I would like to see a product photo
