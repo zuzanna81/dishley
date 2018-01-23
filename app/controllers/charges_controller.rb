@@ -10,7 +10,7 @@ class ChargesController < ApplicationController
 
     charge = Stripe::Charge.create(
       customer: customer.id,
-      amount: @order.total * 100,
+      amount: (@order.total * 100).to_i,
       description: 'Payment for Order',
       currency: 'usd'
     )
