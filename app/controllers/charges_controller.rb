@@ -15,13 +15,11 @@ class ChargesController < ApplicationController
       currency: 'usd'
     )
 
-    if charge.paid?
-      @order.payment_cleared
-      redirect_to order_path(@order), notice: 'Thank you for your order'
-    else
-      @order.payment_declined
-      redirect_to order_path(@order), notice: 'Something went wrong :('
-    end
+    @order.payment_cleared
+    redirect_to order_path(@order), notice: "Thanks, you paid #{@order.total} kr"
+  rescue Exception => e
+    @order.payment_declined
+    redirect_to order_path(@order), notice: "Something went wrong :( - #{e}"
   end
 
   private
