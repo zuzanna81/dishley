@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20180122091527) do
   create_table "orders", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "state"
   end
 
   create_table "product_categories", force: :cascade do |t|
