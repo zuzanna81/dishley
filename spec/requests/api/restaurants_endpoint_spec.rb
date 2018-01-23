@@ -23,6 +23,7 @@ RSpec.describe Api::RestaurantsController, type: :request do
                                street_address: 'Holtermansgatan 1C',
                                post_code: '410 29',
                                restaurant_category: category)}
+      let!(:menu) {create(:menu, name: 'lunch', restaurant: thai_food)}
 
       it 'includes specific restaurant' do
         get '/api/restaurants'
@@ -35,9 +36,6 @@ RSpec.describe Api::RestaurantsController, type: :request do
         expect(json_resp['street-address']).to eq 'Holtermansgatan 1C'
         expect(response.status).to eq 200
       end
-
     end
-
   end
-
 end
