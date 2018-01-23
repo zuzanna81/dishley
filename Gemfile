@@ -24,6 +24,8 @@ gem 'stripe-rails'
 gem 'state_machine'
 gem 'haml'
 gem 'devise'
+gem 'active_model_serializers', '~> 0.10.2'
+
 
 group :development, :test do
   gem 'pry-byebug'

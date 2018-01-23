@@ -11,7 +11,7 @@ RSpec.describe Api::RestaurantsController, type: :request do
 
       it 'returns a collection of restaurants' do
         get '/api/restaurants'
-        expect(JSON.parse(response.body).count).to eq 5
+        expect(JSON.parse(response.body)['data'].count).to eq 5
       end
     end
 
@@ -27,14 +27,12 @@ RSpec.describe Api::RestaurantsController, type: :request do
 
       it 'includes specific restaurant' do
         get '/api/restaurants'
-        expect(JSON.parse(response.body).first['name']).to eq 'Thai Palace'
+        json_resp = JSON.parse(response.body)
+        expect(json_resp['data'].first['attributes']['name']).to eq 'Thai Palace'
       end
-
 
     end
 
-
   end
-
 
 end
