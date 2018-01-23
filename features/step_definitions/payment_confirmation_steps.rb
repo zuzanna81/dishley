@@ -4,6 +4,10 @@ Then("the order should be {string}") do |state|
   expect(order.state).to eq state
 end
 
-Then("I should see {string} and the total amount should be {string}") do |string, price|
-  expect(page).to have_content "#{string} #{price} kr"
+Then("I should see {string} and the total amount should be {string}") do |text, price|
+  expect(page).to have_content "#{text} #{price}"
 end
+#
+# Then("I should see {string}") do |content|
+#    expect(page).to have_content content
+# end
