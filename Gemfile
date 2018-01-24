@@ -25,6 +25,7 @@ gem 'state_machine'
 gem 'haml'
 gem 'devise'
 gem 'active_model_serializers', '~> 0.10.2'
+gem 'devise_token_auth'
 
 
 group :development, :test do
