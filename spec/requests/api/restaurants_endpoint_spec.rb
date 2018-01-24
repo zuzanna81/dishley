@@ -23,9 +23,6 @@ RSpec.describe Api::RestaurantsController, type: :request do
                                street_address: 'Holtermansgatan 1C',
                                post_code: '410 29',
                                restaurant_category: category)}
-      let!(:menu_lunch) {create(:menu, name: 'lunch', restaurant: thai_food)}
-      let!(:product_category) {create(:product_category, name: 'Main', menu: menu_lunch, restaurant: thai_food)}
-
 
       before do
         get '/api/restaurants'
@@ -48,6 +45,31 @@ RSpec.describe Api::RestaurantsController, type: :request do
       it 'includes restaurant category attributes' do
         category = @json_resp['relationships']['restaurant-category']['data']
         expect(category['name']).to eq 'Thai'
+      end
+    end
+  end
+
+  describe '#show' do
+
+    context 'with a specific restaurant' do
+      let(:category) {create(:restaurant_category, name: 'Thai')}
+      let!(:thai_food) {create(:restaurant,
+                               name: 'Thai Palace',
+                               description: 'Lovely place.',
+                               city: 'Gothenburg',
+                               street_address: 'Holtermansgatan 1C',
+                               post_code: '410 29',
+                               restaurant_category: category)}
+      let!(:menu_lunch) {create(:menu, name: 'lunch', restaurant: thai_food)}
+      let!(:product_category) {create(:product_category, name: 'Main', menu: menu_lunch, restaurant: thai_food)}
+
+      before do
+        get '/api/restaurants'
+        @json_resp = JSON.parse(response.body)['data'].first
+      end
+
+      it 'is a valid request' do
+        expect(response.status).to eq 200
       end
 
       it 'includes menus' do
