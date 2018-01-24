@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   resources :charges, only: [:create, :show]
 
   namespace :api do
-    resources :restaurants, only: [:index]
+    resources :restaurants, only: [:index, :show]
   end
 end

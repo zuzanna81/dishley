@@ -87,5 +87,52 @@ RSpec.describe Api::RestaurantsController, type: :request do
         expect(products.size).to eq 0
       end
     end
+    describe '#show' do
+      context 'with anonymous doubles' do
+        let!(:menus) do
+          3.times {create(:menus)}
+        end
+
+        context 'returns a collection of menus' do
+        get '/api/restaurants/:id'
+          expect(JSON.parse(response.body)['data'].count).to eq 3
+        end
+      end
+
+        context 'with a specific restaurant' do
+        let!(:thai_food) {create(:restaurant,
+                                 name: 'Thai Palace')}
+        let!(:menu_lunch) {create(:menu, name: 'lunch', restaurant: thai_food)}
+        let!(:product_category) {create(:product_category, name: 'Main', menu: menu_lunch, restaurant: thai_food)}
+        let!(:product) {create(name: 'Ratatouille',
+                        description: 'Like the movie but better',
+                        price: 50.500,
+                        restaurant: thai_food,
+                        product_category: product_category_main)}
+        end
+
+    before do
+      get '/api/restaurants'
+      @json_resp = JSON.parse(response.body)['data'].first
+
+    end
+
+    it 'is a valid request' do
+      expect(response.status).to eq 200
+    end
+
+    it 'includes menu attributes' do
+      expect(@json_resp['attributes']['name']).to eq 'lunch'
+    end
+
+    it 'includes product categories' do
+      product_categories = @json_resp['relationships']['product-categories']['data']
+      expect(product_category['name']).to eq 'Main'
+    end
+
+    it 'includes products' do
+      products = @json_resp['relationships']['products']['data']
+      expect(products.size).to eq 'Ratatouille'
+    end
   end
 end
