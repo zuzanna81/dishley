@@ -23,7 +23,9 @@ RSpec.describe Api::RestaurantsController, type: :request do
                                street_address: 'Holtermansgatan 1C',
                                post_code: '410 29',
                                restaurant_category: category)}
-      let!(:menu) {create(:menu, name: 'lunch', restaurant: thai_food)}
+      let!(:menu_lunch) {create(:menu, name: 'lunch', restaurant: thai_food)}
+      let!(:product_category) {create(:product_category, name: 'Main', menu: menu_lunch, restaurant: thai_food)}
+
 
       before do
         get '/api/restaurants'
@@ -51,6 +53,11 @@ RSpec.describe Api::RestaurantsController, type: :request do
       it 'includes menus' do
         menus = @json_resp['relationships']['menus']['data']
         expect(menus.first['name']).to eq 'lunch'
+      end
+
+      it 'includes product categories' do
+        product_categories = @json_resp['relationships']['product-categories']['data']
+        expect(product_category['name']).to eq 'Main'
       end
 
       it 'includes products' do

@@ -1,7 +1,8 @@
 class RestaurantSerializer < ActiveModel::Serializer
   attributes :id, :name, :description, :city, :post_code, :street_address
   belongs_to :restaurant_category
-  has_many :products
   has_many :menus
-
+  has_many :product_categories
+  has_many :products
+  
 end
