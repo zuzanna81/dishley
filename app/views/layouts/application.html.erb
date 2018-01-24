@@ -18,10 +18,10 @@
 </head>
 
 <body data-env="<%= Rails.env %>" data-geocoded="<%= @geocoded %>">
-<%= render 'partials/navbar' %>
-<% flash.each do |key, value| %>
-  <div class="alert alert-<%= key %>"><%= value %></div>
-<% end %>
-<%= yield %>
+  <%= render 'partials/navbar' %>
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+  <%= yield %>
 </body>
 </html>
