@@ -25,16 +25,37 @@ RSpec.describe Api::RestaurantsController, type: :request do
                                restaurant_category: category)}
       let!(:menu) {create(:menu, name: 'lunch', restaurant: thai_food)}
 
-      it 'includes specific restaurant' do
+      before do
         get '/api/restaurants'
-        json_resp = JSON.parse(response.body)['data'].first['attributes']
-        expect(json_resp['name']).to eq 'Thai Palace'
-        expect(json_resp['description']).to eq 'Lovely place.'
-        expect(json_resp['city']).to eq 'Gothenburg'
-        expect(json_resp['post-code']).to eq '410 29'
-        expect(json_resp['restaurant-category']['name']).to eq 'Thai'
-        expect(json_resp['street-address']).to eq 'Holtermansgatan 1C'
+        @json_resp = JSON.parse(response.body)['data'].first
+
+      end
+
+      it 'is a valid request' do
         expect(response.status).to eq 200
+      end
+
+      it 'includes restaurant attributes' do
+        expect(@json_resp['attributes']['name']).to eq 'Thai Palace'
+        expect(@json_resp['attributes']['description']).to eq 'Lovely place.'
+        expect(@json_resp['attributes']['city']).to eq 'Gothenburg'
+        expect(@json_resp['attributes']['post-code']).to eq '410 29'
+        expect(@json_resp['attributes']['street-address']).to eq 'Holtermansgatan 1C'
+      end
+
+      it 'includes restaurant category attributes' do
+        category = @json_resp['relationships']['restaurant-category']['data']
+        expect(category['name']).to eq 'Thai'
+      end
+
+      it 'includes menus' do
+        menus = @json_resp['relationships']['menus']['data']
+        expect(menus.first['name']).to eq 'lunch'
+      end
+
+      it 'includes products' do
+        products = @json_resp['relationships']['products']['data']
+        expect(products.size).to eq 0
       end
     end
   end
