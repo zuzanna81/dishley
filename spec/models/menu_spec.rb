@@ -13,7 +13,7 @@ RSpec.describe Menu, type: :model do
 
   describe 'Factory' do
     it 'should be valid' do
-      expect(FactoryBot.create(:menu)).to be_valid
+      expect(create(:menu)).to be_valid
     end
   end
 end
