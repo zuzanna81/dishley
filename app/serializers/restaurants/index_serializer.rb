@@ -1,10 +1,8 @@
 class Restaurants::IndexSerializer < ActiveModel::Serializer
-  attributes :id, :name, :restaurant_category
+  attributes :id, :name
+  belongs_to :restaurant_category
 
+  def restaurant_category
+    RestaurantCategorySerializer.new(object.restaurant_category).as_json
+  end
 end
-
-
-# belongs_to :restaurant_category, only: [name]
-# has_many :menus
-# has_many :product_categories
-# has_many :products

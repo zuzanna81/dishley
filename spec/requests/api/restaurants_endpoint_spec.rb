@@ -36,10 +36,6 @@ RSpec.describe Api::RestaurantsController, type: :request do
 
       it 'includes restaurant attributes' do
         expect(@json_resp['attributes']['name']).to eq 'Thai Palace'
-        expect(@json_resp['attributes']['description']).to eq 'Lovely place.'
-        expect(@json_resp['attributes']['city']).to eq 'Gothenburg'
-        expect(@json_resp['attributes']['post-code']).to eq '410 29'
-        expect(@json_resp['attributes']['street-address']).to eq 'Holtermansgatan 1C'
       end
 
       it 'includes restaurant category attributes' do
@@ -61,11 +57,20 @@ RSpec.describe Api::RestaurantsController, type: :request do
                                post_code: '410 29',
                                restaurant_category: category)}
       let!(:menu_lunch) {create(:menu, name: 'lunch', restaurant: thai_food)}
-      let!(:product_category) {create(:product_category, name: 'Main', menu: menu_lunch, restaurant: thai_food)}
+      let!(:product_category) {create(:product_category,
+                                      name: 'Main courses',
+                                      menu: menu_lunch,
+                                      restaurant: thai_food)}
+      let!(:lunch_box){ create(:product, name: 'Lunch Box',
+                               description: 'Marvelous lunch',
+                               price: 75,
+                               product_category: product_category,
+                               restaurant: thai_food,
+                               image_file_link: 'http://example.com/image.jpg')}
 
       before do
-        get '/api/restaurants'
-        @json_resp = JSON.parse(response.body)['data'].first
+        get "/api/restaurants/#{thai_food.id}"
+        @json_resp = JSON.parse(response.body)['data']
       end
 
       it 'is a valid request' do
@@ -78,61 +83,18 @@ RSpec.describe Api::RestaurantsController, type: :request do
       end
 
       it 'includes product categories' do
-        product_categories = @json_resp['relationships']['product-categories']['data']
-        expect(product_category['name']).to eq 'Main'
+        product_categories = @json_resp['relationships']['menus']['data'].first['product-categories']
+        expect(product_categories.first['name']).to eq 'Main courses'
       end
 
       it 'includes products' do
-        products = @json_resp['relationships']['products']['data']
-        expect(products.size).to eq 0
+        products = @json_resp['relationships']['menus']['data'].first['product-categories'].first['products']
+        expect(products.first['name']).to eq 'Lunch Box'
+        expect(products.first['price']).to eq 75
       end
     end
-    describe '#show' do
-      context 'with anonymous doubles' do
-        let!(:menus) do
-          3.times {create(:menus)}
-        end
 
-        context 'returns a collection of menus' do
-        get '/api/restaurants/:id'
-          expect(JSON.parse(response.body)['data'].count).to eq 3
-        end
-      end
 
-        context 'with a specific restaurant' do
-        let!(:thai_food) {create(:restaurant,
-                                 name: 'Thai Palace')}
-        let!(:menu_lunch) {create(:menu, name: 'lunch', restaurant: thai_food)}
-        let!(:product_category) {create(:product_category, name: 'Main', menu: menu_lunch, restaurant: thai_food)}
-        let!(:product) {create(name: 'Ratatouille',
-                        description: 'Like the movie but better',
-                        price: 50.500,
-                        restaurant: thai_food,
-                        product_category: product_category_main)}
-        end
-
-    before do
-      get '/api/restaurants/:id'
-      @json_resp = JSON.parse(response.body)['data'].first
-    end
-
-    it 'is a valid request' do
-      expect(response.status).to eq 200
-    end
-
-    it 'includes menu attributes' do
-      expect(@json_resp['attributes']['name']).to eq 'lunch'
-    end
-
-    it 'includes product categories' do
-      product_categories = @json_resp['relationships']['product-categories']['data']
-      expect(product_category['name']).to eq 'Main'
-    end
-
-    it 'includes products' do
-      products = @json_resp['relationships']['products']['data']
-      expect(products.size).to eq 'Ratatouille'
-    end
   end
 end
-end
+
