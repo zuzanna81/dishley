@@ -93,8 +93,5 @@ RSpec.describe Api::RestaurantsController, type: :request do
         expect(products.first['price']).to eq 75
       end
     end
-
-
   end
 end
-
