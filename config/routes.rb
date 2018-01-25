@@ -6,7 +6,8 @@ Rails.application.routes.draw do
   resources :orders, only: [:show, :create, :update]
   resources :charges, only: [:create, :show]
 
-  namespace :api do
-    resources :restaurants, only: [:index, :show]
+  namespace :api, defaults: { format: :json } do
+    resources :restaurants, only: [:index,:show]
+    mount_devise_token_auth_for 'User', at: 'auth', skip: [:omniauth_callbacks]
   end
 end

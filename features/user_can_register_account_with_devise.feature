@@ -18,8 +18,7 @@ Feature: User signup
     When I fill in "Password" with "whatever"
     And I fill in "Password confirmation" with "whatever"
     And I click on "Sign up" button
-    Then I should see "1 error prohibited this user from being saved: Email can't be blank"
-
+    Then I should see "2 errors prohibited this user from being saved: Email can't be blankEmail is not an email"
 
   Scenario: User does not fill in Password field [Sad Path]
     When I fill in "Email" with "MyEmail@hotmale.com"
