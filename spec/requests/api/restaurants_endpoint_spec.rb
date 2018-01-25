@@ -112,9 +112,8 @@ RSpec.describe Api::RestaurantsController, type: :request do
         end
 
     before do
-      get '/api/restaurants'
+      get '/api/restaurants/:id'
       @json_resp = JSON.parse(response.body)['data'].first
-
     end
 
     it 'is a valid request' do
@@ -135,4 +134,5 @@ RSpec.describe Api::RestaurantsController, type: :request do
       expect(products.size).to eq 'Ratatouille'
     end
   end
+end
 end
