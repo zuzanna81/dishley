@@ -21,12 +21,22 @@ RSpec.describe 'Sessions', type: :request do
   end
 
     it 'invalid password returns error message' do
-        post '/api/auth/sign_in', params: {
-          email: user.email, password: 'wrong_password'
-        }, headers: headers
+      post '/api/auth/sign_in', params: {
+        email: user.email, password: 'wrong_password'
+      }, headers: headers
 
-        expect(JSON.parse(response.body)['errors'])
-          .to eq ['Invalid login credentials. Please try again.']
-        expect(response.status).to eq 401
+      expect(JSON.parse(response.body)['errors'])
+        .to eq ['Invalid login credentials. Please try again.']
+      expect(response.status).to eq 401
+    end
+
+    it 'invalid email returns error message' do
+      post '/api/auth/sign_in', params: {
+        email: 'wrong@email.com', password: user.password
+      }, headers: headers
+
+      expect(JSON.parse(response.body)['errors'])
+        .to eq ['Invalid login credentials. Please try again.']
+      expect(response.status).to eq 401
     end
 end
