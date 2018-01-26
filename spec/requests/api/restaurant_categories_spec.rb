@@ -36,13 +36,12 @@ RSpec.describe Api::RestaurantCategoriesController, type: :request do
        end
 
        it 'includes restaurant attributes' do
-         binding.pry
          restaurants = @json_resp['relationships']['restaurants']['data']
          expect(restaurants.first['name']).to eq 'Thai Palace'
          expect(restaurants.first['description']).to eq 'Lovely place.'
          expect(restaurants.first['city']).to eq 'Gothenburg'
          expect(restaurants.first['street-address']).to eq 'Holtermansgatan 1C'
-         expect(restaurants.first['post_code']).to eq '410 29'
+         expect(restaurants.first['post-code']).to eq '410 29'
        end
     end
   end
