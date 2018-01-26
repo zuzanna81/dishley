@@ -1,7 +1,7 @@
 class Api::RestaurantCategoriesController < ApiController
 
   def index
-    restaurant_categories = RestaurantCategories.all
+    restaurant_categories = RestaurantCategory.all
     render json: restaurant_categories
   end
 end

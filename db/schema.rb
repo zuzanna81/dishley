@@ -33,6 +33,18 @@ ActiveRecord::Schema.define(version: 20180124154705) do
     t.string "price_currency", default: "USD", null: false
   end
 
+  create_table "order_state_machines", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "order_transitions", force: :cascade do |t|
+    t.bigint "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_order_transitions_on_order_id"
+  end
+
   create_table "orders", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -104,6 +116,7 @@ ActiveRecord::Schema.define(version: 20180124154705) do
   end
 
   add_foreign_key "menus", "restaurants"
+  add_foreign_key "order_transitions", "orders"
   add_foreign_key "product_categories", "menus"
   add_foreign_key "product_categories", "restaurants"
   add_foreign_key "products", "product_categories"
