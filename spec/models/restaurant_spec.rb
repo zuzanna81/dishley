@@ -25,15 +25,15 @@ RSpec.describe Restaurant, type: :model do
 
   describe 'Factory' do
     it 'should be valid' do
-      expect(FactoryBot.create(:restaurant)).to be_valid
+      expect(create(:restaurant)).to be_valid
     end
   end
 
   describe '#full_address' do
     subject do
-      FactoryBot.create(:restaurant, street_address: 'Båtsmansdalsgatan 7',
-                                     city: 'Gothenburg',
-                                     post_code: '424 30')
+      create(:restaurant, street_address: 'Båtsmansdalsgatan 7',
+                          city: 'Gothenburg',
+                          post_code: '424 30')
     end
 
     it 'sets the full_address using geocoder' do
@@ -42,10 +42,10 @@ RSpec.describe Restaurant, type: :model do
   end
 
   describe '#category_name' do
-    let(:restaurant_category) { FactoryBot.create :restaurant_category, name: 'Chinese' }
+    let(:restaurant_category) { create :restaurant_category, name: 'Chinese' }
     let(:restaurant) do
-      FactoryBot.create :restaurant, name: 'Zuzannas Pizza 2',
-                                     restaurant_category: restaurant_category
+      create :restaurant, name: 'Zuzannas Pizza 2',
+                          restaurant_category: restaurant_category
     end
 
     it 'sets the restaurant_category field' do

@@ -13,7 +13,7 @@ RSpec.describe RestaurantCategory, type: :model do
 
   describe 'Factory' do
     it 'should be valid' do
-      expect(FactoryBot.create(:restaurant_category)).to be_valid
+      expect(create(:restaurant_category)).to be_valid
     end
   end
 end
