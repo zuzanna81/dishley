@@ -2,7 +2,7 @@
 
 Week 8-9-10 project for Craft Academy October 2017 Cohort.  
 For this project we switched teams and worked on legacy code and new implementations
-on another team app.  
+on the app of another team.  
 In the final days we started building a mobile client for the app too with Ionic and Angular.
 
 ## Description
@@ -11,16 +11,17 @@ This app will automatically show restaurants nearby your position.
 When you visit the site(https://jak-sie-masz-slowfood.herokuapp.com/) your
 location is tracked down and positioned at the center of the map.  
 Due to demonstration purposes there are two locations with restaurants available,
-Gothenburg and Stockholm. If you want to test this app from another location you can
+Gothenburg and Stockholm.  
+If you want to test this app from another location you can
 download a Chrome extension to change your geolocation(e.g. http://bit.ly/2C46jhs).  
 If you are or choose to be in Gothenburg three restaurants will show up nearby your location
 with categories(in this case _italian_ and _thai_) and restaurants' names. When you click
 on the restaurant **Bov** you'll be able to see the structure of a restaurant's template
-page with menus, submenus, dishes' name, description and price and a the add to order button.  
+page with menus, submenus, dishes' name, description and price and a the `Add to Order` button.  
 If you are or choose to be in Stockholm the same features are available for **Brasserie Balzac**.  
-When you add dishes to your order, an `Order` link will appear in the navbar. You'll be able to see
-the total summary and perform a simulated transaction with Stripe.  
-User authentication is available too via `Sign up`, if you are a first time visitor,
+When you add dishes to your order, an `Order` link will appear in the navbar.  
+You'll be able to see the total summary and perform a simulated transaction with Stripe.  
+User authentication is available too via `Sign up`, if you are a first time visitor,  
 or via `Log in` if you're an already registered user.
 
 ## Contributors
@@ -30,7 +31,8 @@ or via `Log in` if you're an already registered user.
 * Oliver Ochman: https://github.com/oliverochman/
 
 During the first week and a half of the project the team had two different members
-replaced by me and Sophie and they were:
+replaced by me and Sophie,
+they were:
 * Alfred Johansson: https://github.com/aljoh
 * Zuzanna Bienkowska: https://github.com/zuzanna81/
 
