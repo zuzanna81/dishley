@@ -3,7 +3,8 @@
 Week 8-9-10 project for Craft Academy October 2017 Cohort.  
 For this project we switched teams and worked on legacy code and new implementations
 on the app of another team.  
-In the final days we started building a mobile client for the app too with Ionic and Angular.
+In the final days we started building a mobile client for the app with Ionic and Angular  
+You can check it tout here https://github.com/CraftAcademy/dishley_client.
 
 ## Description
 
